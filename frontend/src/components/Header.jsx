@@ -1,30 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchBar from "./SearchBar";
 
 function Header() {
+  const [isSearchBar, setIsSearchBar] = useState(false);
+
+  function handleDisplaySearchBar() {
+    setIsSearchBar(!isSearchBar);
+  }
+
   return (
-    <div className="bg-nav-blue h-32 flex justify-between">
+    <div className="bg-nav-blue h-20 flex justify-between items-center">
       <img
-        className="h-20 mt-4 m-10"
+        className=" h-14 ml-2"
         src="src/assets/chopeBiereAnimation1.png"
         alt="icone menu burger"
       />
       <img
-        className="h-56 pt-8"
+        className="h-24 w-20 mt-8"
         src="src/assets/logo_brewdog.png"
         alt="brewdog logo"
       />
-      <div className="flex ">
+      <div className="flex  mr-2">
         <img
-          className="h-11 mt-10 m-10"
+          onClick={handleDisplaySearchBar}
+          className="h-8 w-8"
           src="src/assets/loupe.png"
           alt="icone loupe"
         />
-        <input
-          className=" h-8 rounded-lg mt-10"
-          placeholder="Search your beer "
-        />
+        {isSearchBar ? <SearchBar /> : <div />}
+
         <img
-          className="h-11 mt-10 m-10"
+          className="h-8 w-8 "
           src="src/assets/panier.png"
           alt="icone panier"
         />
