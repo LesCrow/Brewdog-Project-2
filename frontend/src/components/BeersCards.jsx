@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 
 function BeersCards({ beer }) {
   return (
-    <li className="border-solid border-black border-2 w-64 h-72  flex flex-col justify-center items-center ">
-      <h2 className="font-bold ">{beer.name}</h2>
-      <img src={beer.image_url} alt="de la biere" className=" h-52 w-16 " />
-      <p>{beer.tagline}</p>
-      <p> {beer.abv}%</p>
+    <li className=" w-32 h-100  flex flex-col justify-end items-center text-center ">
+      <img src={beer.image_url} alt={beer.name} className=" h-52 w-16 " />
+      <h2 className="font-extrabold  hover:underline-offset-auto  ">
+        {beer.name}
+      </h2>
+      <p className=" font-semibold"> {beer.abv}%</p>
+      <p className=" text-xs">{beer.tagline}</p>
+      <p className="text-backpink font-semibold">{beer.target_fg} JA$</p>
     </li>
   );
 }

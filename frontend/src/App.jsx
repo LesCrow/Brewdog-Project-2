@@ -1,9 +1,8 @@
 import Beers from "@components/Beers";
-import "./App.css";
 
 function App() {
   return (
-    <div className="bg-beige-body">
+    <div className="bg-backcolor">
       <div>
         <p>coucou</p>
         <Beers />

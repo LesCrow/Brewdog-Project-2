@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "beige-body": "#FFECD1",
+        backgreen: "#99C1B9",
+        bargreen: "#15616D",
+        backpink: "#D88C9A",
+        backcolor: "#FFECD1",
       },
     },
   },
