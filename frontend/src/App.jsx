@@ -1,4 +1,3 @@
-import "./App.css";
 import Brewery from "./Brewery";
 
 function App() {

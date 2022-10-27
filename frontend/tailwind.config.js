@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     colors: {
       "nav-blue": "#15616D",
+      backcolor: "#FFECD1",
     },
     extend: {},
   },
