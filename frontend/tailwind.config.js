@@ -6,8 +6,10 @@ module.exports = {
       backgreen: "#99C1B9",
       bargreen: "#15616D",
       backcolor: "#FFECD1",
+      backpink: "#D88C9A",
+
+      extend: {},
     },
-    extend: {},
   },
   plugins: [],
 };
