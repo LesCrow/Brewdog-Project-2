@@ -1,25 +1,35 @@
 import React, { useState } from "react";
+import PictoBeer from "./PictoBeer";
+import PictoBeer2 from "./PictoBeer2";
 import SearchBar from "./SearchBar";
 
 function Header() {
-  const [isSearchBar, setIsSearchBar] = useState(false);
+  // constants declaration
+  const [isSearchBarActive, setIsSearchBarActive] = useState(false);
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
+  // function declaration
   function handleDisplaySearchBar() {
-    setIsSearchBar(!isSearchBar);
+    setIsSearchBarActive(!isSearchBarActive);
+  }
+  function handleDisplayBurger() {
+    setIsBurgerMenuOpen(!isBurgerMenuOpen);
   }
 
   return (
+    // Burger menu opener
     <div className="bg-nav-blue h-20 flex justify-between items-center">
+      {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
+      {isBurgerMenuOpen && <PictoBeer2 onClick={handleDisplayBurger} />}
+
+      {/* Logo */}
       <img
-        className=" h-14 ml-2"
-        src="src/assets/chopeBiereAnimation1.png"
-        alt="icone menu burger"
-      />
-      <img
-        className="h-24 w-20 mt-8"
+        className=" logo h-24 w-20 mt-8"
         src="src/assets/logo_brewdog.png"
         alt="brewdog logo"
       />
+
+      {/* Display search bar */}
       <div className="flex  mr-2">
         <img
           onClick={handleDisplaySearchBar}
@@ -27,8 +37,7 @@ function Header() {
           src="src/assets/loupe.png"
           alt="icone loupe"
         />
-        {isSearchBar ? <SearchBar /> : <div />}
-
+        {isSearchBarActive && <SearchBar />}
         <img
           className="h-8 w-8 "
           src="src/assets/panier.png"
