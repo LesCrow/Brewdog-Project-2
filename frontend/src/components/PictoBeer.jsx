@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 function PictoBeer({ onClick }) {
   return (
-    <div>
+    <div className="">
       <img
         onClick={onClick}
         src="src/assets/chopeBiereAnimation1.png"
         alt="icone menu burger"
-        className="h-14 ml-2"
+        className="h-14 ml-2 "
       />
     </div>
   );
