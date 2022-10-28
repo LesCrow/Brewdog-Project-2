@@ -12,16 +12,18 @@ function Brewery() {
 
       <div className="z-10 relative w-full">
         <div className="bg-backcolor">
-          <Title title={"BREWERY"} />
+          <Title title="BREWERY" />
 
           <img
-            className="object-cover bg-center w-full h-40"
+            className=" p-3 object-cover bg-center w-full h-40"
             src="src/assets/history-2012.jpeg"
             alt="brewery"
           />
         </div>
         <div className="w-full p-10">
-          <h2 className="text-left  text-2xl ">NOTRE BRASSERIE A ELLON</h2>
+          <h2 className="text-left  text-2xl text-white ">
+            NOTRE BRASSERIE A ELLON
+          </h2>
           <h3 className=" text-right text-2xl p-2">Ingredients</h3>
           <p className="text-right text-[15px]">
             Il ne faut que 4 ingrédients pour brasser de la bière, mais ce que
@@ -32,7 +34,7 @@ function Brewery() {
           </p>
         </div>
         <img
-          className="object-cover bg-center w-full h-40"
+          className=" p-3 object-cover bg-center w-full h-40"
           src="src/assets/155_-_bronze_beers_-_may_2021_19052021_-_brewdog_-_grant_anderson_-_fullsize.jpeg"
           alt="technique"
         />
@@ -48,7 +50,7 @@ function Brewery() {
           </p>
         </div>
         <img
-          className="object-cover bg-center w-full h-40"
+          className="p-3 object-cover bg-center w-full h-40"
           src="src/assets/Beer_Quality_4.webp"
           alt="beer"
         />
@@ -65,9 +67,9 @@ function Brewery() {
             (comme le CO2, l'eau et le biométhane) pour aider à la fabrication
             de la bière.
           </p>
+          <h1 className="text-5xl text-center  text-nav-blue bord ">#BREW</h1>
         </div>
       </div>
-      <h2 className="text-5xl">#BREW</h2>
     </div>
   );
 }
