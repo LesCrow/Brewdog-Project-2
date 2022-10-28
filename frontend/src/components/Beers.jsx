@@ -2,7 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import BeersCards from "./BeersCards";
 
-const typeBoxes = ["% alcool croissant", "% alcool decroissant"];
+const typeBoxes = [
+  "Trier par : ",
+  "% alcool croissant",
+  "% alcool decroissant",
+  "prix croissant",
+  "prix decroissant",
+];
 
 function Beers() {
   const [selectedCheckRadio, setSelectedCheckRadio] = useState();
@@ -16,8 +22,17 @@ function Beers() {
   }, []);
 
   const handleSorting = (data) => {
-    if (selectedCheckRadio) {
+    if (selectedCheckRadio === "% alcool croissant") {
       return data.sort((a, b) => a.abv - b.abv);
+    }
+    if (selectedCheckRadio === "% alcool decroissant") {
+      return data.sort((a, b) => b.abv - a.abv);
+    }
+    if (selectedCheckRadio === "prix croissant") {
+      return data.sort((a, b) => a.target_fg - b.target_fg);
+    }
+    if (selectedCheckRadio === "prix decroissant") {
+      return data.sort((a, b) => b.target_fg - a.target_fg);
     }
     return data;
   };
@@ -35,22 +50,15 @@ function Beers() {
           defaultValue={beerValue}
           onChange={(e) => setBeerValue(e.target.value)}
         />
-        <ul>
+        <select onChange={(e) => setSelectedCheckRadio(e.target.value)}>
           {typeBoxes.map((box) => {
             return (
-              <li key={box}>
-                <input
-                  type="checkbox"
-                  value={box}
-                  id={box}
-                  checked={box === selectedCheckRadio}
-                  onChange={(e) => setSelectedCheckRadio(e.target.value)}
-                />
-                <label htmlFor={box}>{box}</label>
-              </li>
+              <option key={box} value={box}>
+                {box}
+              </option>
             );
           })}
-        </ul>
+        </select>
       </div>
       <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 ">
         {dataBeer.length &&
