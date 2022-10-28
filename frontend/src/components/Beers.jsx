@@ -39,18 +39,23 @@ function Beers() {
 
   return (
     <div className="">
-      <div className="w-100 bg-slate-500">
-        <label>nombres de bierres affiché : {beerValue} </label>
-        <br />
-        <input
-          className="w-1/6"
-          type="range"
-          min="1"
-          max="25"
-          defaultValue={beerValue}
-          onChange={(e) => setBeerValue(e.target.value)}
-        />
-        <select onChange={(e) => setSelectedCheckRadio(e.target.value)}>
+      <div className=" w-100 bg-slate-500 flex flex-row justify-around h-18 items-center align-middle">
+        <label>
+          nombres de bierres affiché : {beerValue}
+          <br />
+          <input
+            className=""
+            type="range"
+            min="1"
+            max="25"
+            defaultValue={beerValue}
+            onChange={(e) => setBeerValue(e.target.value)}
+          />
+        </label>
+        <select
+          onChange={(e) => setSelectedCheckRadio(e.target.value)}
+          className="h-8 w-36 border-solid "
+        >
           {typeBoxes.map((box) => {
             return (
               <option key={box} value={box}>

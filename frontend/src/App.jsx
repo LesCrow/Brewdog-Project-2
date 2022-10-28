@@ -4,7 +4,6 @@ function App() {
   return (
     <div className="bg-backcolor">
       <div>
-        <p>coucou</p>
         <Beers />
       </div>
     </div>
