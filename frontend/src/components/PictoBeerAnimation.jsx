@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function PictoBeer2({ onClick }) {
+function PictoBeerAnimation({ onClick }) {
   return (
-    <div>
+    <div className="">
       <img
         onClick={onClick}
         src="src/assets/animation.gif"
         alt="icone menu burger"
-        className="h-14 ml-2 mt-32"
+        className="h-14 w-14 "
       />
     </div>
   );
 }
 
-PictoBeer2.propTypes = {
+PictoBeerAnimation.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default PictoBeer2;
+export default PictoBeerAnimation;

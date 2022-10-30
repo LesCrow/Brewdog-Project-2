@@ -1,10 +1,12 @@
 import Header from "@components/Header";
+import PageBurger from "@components/PageBurger";
 import "./App.css";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Header />
+      <PageBurger />
     </div>
   );
 }

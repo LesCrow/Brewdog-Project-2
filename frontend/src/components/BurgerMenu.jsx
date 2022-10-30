@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import MenuList from "./MenuList";
-
 import PictoBeer from "./PictoBeer";
-import PictoBeer2 from "./PictoBeer2";
+import PictoBeerAnimation from "./PictoBeerAnimation";
 
 function BurgerMenu() {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
@@ -12,11 +10,8 @@ function BurgerMenu() {
   return (
     <div>
       {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
-      <div className="border-r-2">
-        {isBurgerMenuOpen && <PictoBeer2 onClick={handleDisplayBurger} />}
 
-        {isBurgerMenuOpen && <MenuList />}
-      </div>
+      {isBurgerMenuOpen && <PictoBeerAnimation onClick={handleDisplayBurger} />}
     </div>
   );
 }

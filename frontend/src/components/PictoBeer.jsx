@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function PictoBeer({ onClick }) {
+function PictoBeer({ onClick, display }) {
   return (
-    <div className="">
+    <div className="h-14 w-14 ">
       <img
         onClick={onClick}
         src="src/assets/chopeBiereAnimation1.png"
         alt="icone menu burger"
-        className="h-14 ml-2 "
+        className={display}
       />
     </div>
   );
@@ -16,6 +16,7 @@ function PictoBeer({ onClick }) {
 
 PictoBeer.propTypes = {
   onClick: PropTypes.func.isRequired,
+  display: PropTypes.string.isRequired,
 };
 
 export default PictoBeer;

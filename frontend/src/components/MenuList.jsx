@@ -2,9 +2,9 @@ import React from "react";
 
 function MenuList() {
   return (
-    <div className="mt-14 ">
+    <div>
       <nav>
-        <ul className="">
+        <ul className="bg-nav-blue h-screen flex flex-col justify-around items-center">
           <li>
             <p>THE SHOP</p>
           </li>
