@@ -2,21 +2,19 @@ import React from "react";
 
 function MenuList() {
   return (
-    <div>
-      <nav>
-        <ul className="bg-nav-blue h-screen flex flex-col justify-around items-center">
-          <li>
-            <p>THE SHOP</p>
-          </li>
-          <li>
-            <p>THE BREWERY</p>
-          </li>
-          <li>
-            <p>CONTACT US</p>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav className="bg-nav-blue ">
+      <ul className="flex flex-col h-screen  justify-around items-center">
+        <li>
+          <p className="text-5xl">THE SHOP</p>
+        </li>
+        <li>
+          <p className="text-5xl">THE BREWERY</p>
+        </li>
+        <li>
+          <p className="text-5xl">CONTACT US</p>
+        </li>
+      </ul>
+    </nav>
   );
 }
 

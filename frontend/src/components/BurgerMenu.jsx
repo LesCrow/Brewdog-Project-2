@@ -9,9 +9,12 @@ function BurgerMenu() {
   }
   return (
     <div>
-      {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
-
-      {isBurgerMenuOpen && <PictoBeerAnimation onClick={handleDisplayBurger} />}
+      <div>
+        {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
+        {isBurgerMenuOpen && (
+          <PictoBeerAnimation onClick={handleDisplayBurger} />
+        )}
+      </div>
     </div>
   );
 }
