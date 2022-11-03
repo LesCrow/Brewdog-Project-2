@@ -1,20 +1,26 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function MenuList() {
   return (
-    <nav className="bg-nav-blue ">
+    <motion.nav
+      initial={{ x: -1000 }}
+      animate={{ x: 0 }}
+      transition={{ delay: 0.5, type: "just" }}
+      className="bg-nav-blue "
+    >
       <ul className="text-white flex flex-col h-screen justify-around items-center">
         <li>
-          <p className="text-3xl">THE SHOP</p>
+          <p className="text-2xl">THE SHOP</p>
         </li>
         <li>
           <p className="text-3xl">THE BREWERY</p>
         </li>
         <li>
-          <p className="text-3xl">CONTACT US</p>
+          <p className="text-4xl">CONTACT US</p>
         </li>
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 
