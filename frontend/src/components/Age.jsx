@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { days, months, years } from "../utils/constants";
 
@@ -36,18 +37,34 @@ function Age({ setIsVerified }) {
   };
 
   return (
-    <div className="w-screen h-screen bg-default flex flex-col justify-center align-middle items-center">
-      <img
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="w-full absolute top-0 left-0 h-full bg-opacity-90 bg-default flex flex-col justify-center align-middle items-center"
+    >
+      <motion.img
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
         className="flex w-auto"
         src="src/assets/LogoEnterTheWebSite.png"
         alt="Age"
       />
-      <h1 className="text-bargreen text-center text-4xl text-stroke text-white pt-10">
-        How old are you ?
-      </h1>
-      <div className="flex flex-row space-x-10 p-10 h-40">
-        <select
-          className="border-black border-2 px-10 py-5"
+      <div className="overflow-hidden">
+        <motion.h1
+          initial={{ y: -400 }}
+          animate={{ y: 0 }}
+          className="text-bargreen text-center text-4xl text-stroke text-white pt-10"
+        >
+          How old are you ?
+        </motion.h1>
+      </div>
+      <div className="flex flex-row items-center align-middle justify-center space-x-10  h-40 ">
+        <motion.select
+          initial={{ x: -1000 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.2, type: "just" }}
+          className="border-black border-2 px-2 md:px-6 lg:px-12 py-5"
           onChange={handleYearChange}
           name="years"
         >
@@ -57,9 +74,12 @@ function Age({ setIsVerified }) {
               {element}
             </option>
           ))}
-        </select>
-        <select
-          className="border-black border-2 px-12"
+        </motion.select>
+        <motion.select
+          initial={{ y: 1000 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.3, type: "just" }}
+          className="border-black border-2 px-2 md:px-6 lg:px-12 py-5"
           onChange={handleDayChange}
           name="days"
         >
@@ -69,9 +89,12 @@ function Age({ setIsVerified }) {
               {element}
             </option>
           ))}
-        </select>
-        <select
-          className="border-black border-2 px-6"
+        </motion.select>
+        <motion.select
+          initial={{ x: 1000 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 0.5, type: "just" }}
+          className="border-black border-2 px-2 md:px-6 lg:px-12 py-5"
           onChange={handleMonthChange}
           name="months"
         >
@@ -81,17 +104,20 @@ function Age({ setIsVerified }) {
               {element}
             </option>
           ))}
-        </select>
+        </motion.select>
       </div>
-      <button
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
         className="flex bg-button p-2 rounded text-white text-stroke"
         onClick={handleVerification}
         type="submit"
         alt="Cheers"
       >
         Cheers!
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 }
 

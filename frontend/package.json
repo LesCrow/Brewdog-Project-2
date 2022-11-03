@@ -10,6 +10,7 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
+    "framer-motion": "^7.6.4",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -32,5 +33,9 @@
     "prettier": "^2.5.1",
     "tailwindcss": "^3.2.1",
     "vite": "^2.8.0"
-  }
+  },
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
