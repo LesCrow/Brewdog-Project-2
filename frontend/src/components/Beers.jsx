@@ -13,7 +13,8 @@ const typeBoxes = [
 function Beers() {
   const [selectedCheckRadio, setSelectedCheckRadio] = useState();
   const [dataBeer, setDataBeer] = useState([]);
-  const [beerValue, setBeerValue] = useState(25);
+  const [foodPairing, setFoodPairing] = useState("");
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     axios
@@ -21,55 +22,64 @@ function Beers() {
       .then((response) => setDataBeer(response.data));
   }, []);
 
-  const handleSorting = (data) => {
+  const checkIfFoodPairingMatch = (food, value) => {
+    return food.toLowerCase().includes(value.toLowerCase());
+  };
+
+  const handleSorting = (beer) => {
     if (selectedCheckRadio === "% alcool croissant") {
-      return data.sort((a, b) => a.abv - b.abv);
+      return beer.sort((a, b) => a.abv - b.abv);
     }
     if (selectedCheckRadio === "% alcool decroissant") {
-      return data.sort((a, b) => b.abv - a.abv);
+      return beer.sort((a, b) => b.abv - a.abv);
     }
     if (selectedCheckRadio === "prix croissant") {
-      return data.sort((a, b) => a.target_fg - b.target_fg);
+      return beer.sort((a, b) => a.target_fg - b.target_fg);
     }
     if (selectedCheckRadio === "prix decroissant") {
-      return data.sort((a, b) => b.target_fg - a.target_fg);
+      return beer.sort((a, b) => b.target_fg - a.target_fg);
     }
-    return data;
+    return beer;
   };
 
   return (
     <div className="">
       <div className=" w-100 bg-slate-500 flex flex-row justify-around h-18 items-center align-middle">
-        <label>
-          nombres de bierres affiché : {beerValue}
-          <br />
+        <div className="flex flex-col-reverse gap-2">
+          <select
+            onChange={(e) => setSelectedCheckRadio(e.target.value)}
+            className="h-8 w-36 border-solid rounded"
+          >
+            {typeBoxes.map((box) => {
+              return (
+                <option key={box} value={box}>
+                  {box}
+                </option>
+              );
+            })}
+          </select>
           <input
-            className=""
-            type="range"
-            min="1"
-            max="25"
-            defaultValue={beerValue}
-            onChange={(e) => setBeerValue(e.target.value)}
+            type="text"
+            placeholder=" 🔍 FoodPairing with ..."
+            className="rounded"
+            maxLength="50"
+            onChange={(e) => setFoodPairing(e.target.value)}
+            onClick={setIsActive}
           />
-        </label>
-        <select
-          onChange={(e) => setSelectedCheckRadio(e.target.value)}
-          className="h-8 w-36 border-solid "
-        >
-          {typeBoxes.map((box) => {
-            return (
-              <option key={box} value={box}>
-                {box}
-              </option>
-            );
-          })}
-        </select>
+        </div>
       </div>
       <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 ">
         {dataBeer.length &&
           handleSorting(dataBeer)
-            .slice(0, beerValue)
-            .map((beer) => <BeersCards key={beer.id} beer={beer} />)}
+            .filter(
+              (beer) =>
+                beer.food_pairing.filter((item) =>
+                  checkIfFoodPairingMatch(item, foodPairing)
+                ).length > 0
+            )
+            .map((beer) => (
+              <BeersCards key={beer.id} beer={beer} isActive={isActive} />
+            ))}
       </ul>
     </div>
   );
