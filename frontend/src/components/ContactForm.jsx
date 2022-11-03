@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const FORM_ENDPOINT = "";
 
@@ -33,7 +33,7 @@ const ContactForm = () => {
           </h1>
           <img className="p-5" src="src/assets/dogtop.jpeg" alt="banimage" />
         </div>
-        <div className="flex flex-row-reverse">
+        <div className="flex justify-between w-full flex-row-reverse">
           <form
             className="bg-backgreen border 3px border-black	shadow-md rounded px-8 pt-6 pb-8 m-5"
             action={FORM_ENDPOINT}
@@ -78,30 +78,34 @@ const ContactForm = () => {
               </button>
             </div>
           </form>
-          <motion.div
-            initial={{ x: 1000 }}
-            animate={{ x: 100 }}
-            transition={{ delay: 1 }}
-            className="text-start flex justify-start"
-          >
-            <img
-              className="text-xs objet-cover h-48 w-auto"
-              src="src/assets/space.jpeg"
-              alt="spaceimage"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ x: -1000 }}
-            animate={{ x: 300 }}
-            transition={{ delay: 2 }}
-            className="text-start flex justify-start"
-          >
-            <img
-              className="text-xs object-cover h-48 w-auto mt-20"
-              src="src/assets/concert.jpeg"
-              alt="concertimage"
-            />
-          </motion.div>
+          <div className="relative flex flex-col">
+            <motion.div
+              initial={{ x: 1000 }}
+              animate={{ x: 100 }}
+              transition={{ delay: 1 }}
+              className="text-start relative flex my-10 justify-start w-48 "
+            >
+              <img
+                className="text-xs objet-cover h-full w-full"
+                src="src/assets/space.jpeg"
+                alt="spaceimage"
+              />
+              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5"></div>
+            </motion.div>
+            <motion.div
+              initial={{ x: -1000 }}
+              animate={{ x: 230 }}
+              transition={{ delay: 1.5 }}
+              className="text-start flex my-10 relative justify-start  w-48 "
+            >
+              <img
+                className="text-xs object-cover h-full w-full"
+                src="src/assets/concert.jpeg"
+                alt="concertimage"
+              />
+              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5"></div>
+            </motion.div>
+          </div>
         </div>
         <div>
           <h2 className="text-bargreen text-center text-4xl  text-stroke ">
