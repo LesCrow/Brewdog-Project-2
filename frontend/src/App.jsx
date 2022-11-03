@@ -1,9 +1,10 @@
 import "./App.css";
+import Footer from "./components/footer";
 
 function App() {
   return (
-    <div className="">
-      <p>coucou</p>
+    <div className="App">
+      <Footer />
     </div>
   );
 }
