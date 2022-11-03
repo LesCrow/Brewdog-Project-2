@@ -9,7 +9,7 @@ function BeersCards({ beer, isActive }) {
   }
   return (
     <li
-      className=" w-32 h-100 flex flex-col justify-end items-center text-center border-solid border-2 "
+      className=" w-32 h-100 flex flex-col justify-end items-center text-center relative hover:opacity-5"
       onMouseOver={HandleOverBeer}
       onFocus={HandleOverBeer}
     >
@@ -23,7 +23,7 @@ function BeersCards({ beer, isActive }) {
       <h2 className="font-extrabold  hover:underline-offset-auto  ">
         {beer.name}
       </h2>
-      <p className=" font-semibold"> {beer.abv}%</p>
+      <p className="text-bargreen font-semibold underline"> {beer.abv}%</p>
       <p className=" text-xs">{beer.tagline}</p>
       <p className="text-backpink font-semibold">{beer.target_fg} JA$</p>
       {isActive ? (

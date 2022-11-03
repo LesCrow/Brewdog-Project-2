@@ -41,32 +41,29 @@ function Beers() {
     }
     return beer;
   };
-
   return (
     <div className="">
-      <div className=" w-100 bg-slate-500 flex flex-row justify-around h-18 items-center align-middle">
-        <div className="flex flex-col-reverse gap-2">
-          <select
-            onChange={(e) => setSelectedCheckRadio(e.target.value)}
-            className="h-8 w-36 border-solid rounded"
-          >
-            {typeBoxes.map((box) => {
-              return (
-                <option key={box} value={box}>
-                  {box}
-                </option>
-              );
-            })}
-          </select>
-          <input
-            type="text"
-            placeholder=" 🔍 FoodPairing with ..."
-            className="rounded"
-            maxLength="50"
-            onChange={(e) => setFoodPairing(e.target.value)}
-            onClick={setIsActive}
-          />
-        </div>
+      <div className=" w-full bg-slate-500 flex justify-around items-center h-10 ">
+        <select
+          onChange={(e) => setSelectedCheckRadio(e.target.value)}
+          className=" w-40 rounded h-6 md:w-60"
+        >
+          {typeBoxes.map((box) => {
+            return (
+              <option key={box} value={box}>
+                {box}
+              </option>
+            );
+          })}
+        </select>
+        <input
+          type="text"
+          placeholder=" 🔍 FoodPairing with ..."
+          className="w-40 rounded h-6 md:w-60"
+          maxLength="50"
+          onChange={(e) => setFoodPairing(e.target.value)}
+          onClick={setIsActive}
+        />
       </div>
       <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 ">
         {dataBeer.length &&
