@@ -3,7 +3,7 @@ import Footer from "./components/footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-screen flex bg-black">
       <Footer />
     </div>
   );
