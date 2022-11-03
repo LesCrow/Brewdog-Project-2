@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import BurgerMenu from "./BurgerMenu";
+import PropTypes from "prop-types";
 import SearchBar from "./SearchBar";
+import PictoBeer from "./PictoBeer";
+import PictoBeerAnimation from "./PictoBeerAnimation";
 
-function Header() {
-  // constants declaration
+function Header({
+  isBurgerMenuOpen,
+
+  handleDisplayBurger,
+}) {
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
-
-  // function declaration
   function handleDisplaySearchBar() {
     setIsSearchBarActive(!isSearchBarActive);
   }
@@ -14,8 +17,10 @@ function Header() {
   return (
     <div>
       <div className="bg-nav-blue h-20 flex justify-around items-center">
-        {/* Burger menu opener */}
-        <BurgerMenu />
+        {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
+        {isBurgerMenuOpen && (
+          <PictoBeerAnimation onClick={handleDisplayBurger} />
+        )}
 
         {/* Logo */}
         <img
@@ -48,4 +53,8 @@ function Header() {
   );
 }
 
+Header.propTypes = {
+  isBurgerMenuOpen: PropTypes.bool.isRequired,
+  handleDisplayBurger: PropTypes.func.isRequired,
+};
 export default Header;
