@@ -10,7 +10,7 @@ function Brewery() {
         alt="backgroundImage"
       /> */}
 
-      <div className="z-10  mt-[400px] relative w-full">
+      <div className="z-10  mt-[30px] relative w-full">
         <div className="">
           <Title title="BREWERY" />
 
