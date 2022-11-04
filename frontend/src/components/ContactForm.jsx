@@ -34,7 +34,7 @@ function ContactForm() {
         </div>
         <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
           <form
-            className="bg-backgreen border 3px border-black	shadow-md rounded px-8 pt-6 pb-8 m-5"
+            className="bg-backgreen border 3px border-black	shadow-md rounded px-52 pt-40 pb-8 m-10"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
             method="POST"
@@ -47,7 +47,7 @@ function ContactForm() {
                 type="text"
                 placeholder="Nom"
                 name="name"
-                className="border 3px border-black	px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
+                className="border 3px border-black	px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
                 required
               />
             </div>
@@ -56,7 +56,7 @@ function ContactForm() {
                 type="email"
                 placeholder="Email"
                 name="email"
-                className="border 3px border-black px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
+                className="border 3px border-black px-3 py-3 placeholder-gray-400 text-gray-600 relative  bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
                 required
               />
             </div>
@@ -64,7 +64,7 @@ function ContactForm() {
               <textarea
                 placeholder="Message"
                 name="message"
-                className="border 3px border-black px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full"
+                className="border 3px border-black px-3 py-3 placeholder-gray-400 text-gray-600 relative  bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full"
                 required
               />
             </div>
@@ -82,7 +82,7 @@ function ContactForm() {
               initial={{ x: 1000 }}
               animate={{ x: 100 }}
               transition={{ delay: 1 }}
-              className="text-start relative flex my-10 justify-start w-48 "
+              className="text-start relative flex my-10 justify-start w-96 "
             >
               <img
                 className="text-xs objet-cover h-full w-full"
@@ -93,9 +93,9 @@ function ContactForm() {
             </motion.div>
             <motion.div
               initial={{ x: -1000 }}
-              animate={{ x: 230 }}
+              animate={{ x: 500 }}
               transition={{ delay: 1.5 }}
-              className="text-start flex my-10 relative justify-start  w-48 "
+              className="text-start flex my-10 relative justify-start  w-96"
             >
               <img
                 className="text-xs object-cover h-full w-full"
