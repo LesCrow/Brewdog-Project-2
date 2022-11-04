@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import MenuLinks from "./MenuLinks";
 
-function MenuListDesktop() {
+const MenuListDesktop = forwardRef((_, ref) => {
   return (
-    <motion.nav className="bg-nav-blue relative w-1/3 h-[100vh] ">
+    <motion.nav ref={ref} className="bg-nav-blue relative w-1/3 h-[100vh] ">
       <motion.div
         animate={{ right: -300, rotate: "-20deg", top: 0 }}
         initial={{ right: 0 }}
@@ -16,6 +16,6 @@ function MenuListDesktop() {
       </motion.ul>
     </motion.nav>
   );
-}
+});
 
 export default MenuListDesktop;

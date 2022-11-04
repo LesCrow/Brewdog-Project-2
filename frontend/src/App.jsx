@@ -1,11 +1,15 @@
 import Header from "@components/Header";
-import MenuList from "@components/MenuList";
-import React, { useState } from "react";
+import MenuListDesktop from "@components/MenuListDesktop";
+import React, { useRef, useState } from "react";
 
 import "./App.css";
+import useOnClickOutside from "./hooks/useOnClickOutside";
 
 function App() {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const ref = useRef();
+  useOnClickOutside(ref, () => setIsBurgerMenuOpen(false));
+
   function handleDisplayBurger() {
     setIsBurgerMenuOpen(!isBurgerMenuOpen);
   }
@@ -17,7 +21,7 @@ function App() {
         isBurgerMenuOpen={isBurgerMenuOpen}
       />
 
-      {isBurgerMenuOpen && <MenuList />}
+      {isBurgerMenuOpen && <MenuListDesktop ref={ref} />}
     </div>
   );
 }
