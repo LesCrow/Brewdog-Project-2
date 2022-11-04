@@ -33,7 +33,7 @@ const ContactForm = () => {
           </h1>
           <img className="p-5" src="src/assets/dogtop.jpeg" alt="banimage" />
         </div>
-        <div className="flex justify-between w-full flex-row-reverse">
+        <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
           <form
             className="bg-backgreen border 3px border-black	shadow-md rounded px-8 pt-6 pb-8 m-5"
             action={FORM_ENDPOINT}
@@ -78,7 +78,7 @@ const ContactForm = () => {
               </button>
             </div>
           </form>
-          <div className="relative flex flex-col">
+          <div className="relative hidden sm:flex md:flex lg:flex  flex-col">
             <motion.div
               initial={{ x: 1000 }}
               animate={{ x: 100 }}
