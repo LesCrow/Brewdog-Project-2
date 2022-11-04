@@ -1,25 +1,17 @@
-import { useEffect } from "react";
-import ContactForm from "./components/ContactForm";
+import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import Age from "./components/Age";
+import "react-toastify/dist/ReactToastify.css";
+import Brewery from "./components/Brewery";
 
 function App() {
-  useEffect(() => {
-    if (document) {
-      const stylesheet = document.createElement("link");
-      stylesheet.rel = "stylesheet";
-      stylesheet.href =
-        "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css";
-
-      document.head.appendChild(stylesheet);
-    }
-  }, []);
+  const [isVerified, setIsVerified] = useState(false);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="py-6">
-          <ContactForm />
-        </div>
-      </header>
+    <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
+      {!isVerified && <Age setIsVerified={setIsVerified} />}
+      <Brewery />
+      <ToastContainer />
     </div>
   );
 }

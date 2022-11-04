@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const FORM_ENDPOINT = "";
 
-const ContactForm = () => {
+function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = () => {
     setTimeout(() => {
@@ -23,11 +23,10 @@ const ContactForm = () => {
   return (
     <div className="min-h-screen bg-backcolor w-full">
       <div className="absolute top-0  bg-backcolor left-0 w-full h-full">
-        <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full"></div>
+        <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">
         <div className="mb-3 pt-0">
-          <h1 className="text-2xl font-bold"></h1>
           <h1 className="text-bargreen text-center text-4xl  text-stroke">
             CONTACT
           </h1>
@@ -90,7 +89,7 @@ const ContactForm = () => {
                 src="src/assets/space.jpeg"
                 alt="spaceimage"
               />
-              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5"></div>
+              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5" />
             </motion.div>
             <motion.div
               initial={{ x: -1000 }}
@@ -103,7 +102,7 @@ const ContactForm = () => {
                 src="src/assets/concert.jpeg"
                 alt="concertimage"
               />
-              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5"></div>
+              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5" />
             </motion.div>
           </div>
         </div>
@@ -115,6 +114,6 @@ const ContactForm = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ContactForm;
