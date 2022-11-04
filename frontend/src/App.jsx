@@ -16,7 +16,7 @@ function App() {
   }
 
   const size = useWindowSize();
-  const { width } = size.width;
+  const { width } = size;
 
   return (
     <div>
