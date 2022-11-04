@@ -40,7 +40,7 @@ function Age({ setIsVerified }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full fixed top-0 z-50 left-0 h-full bg-opacity-90 bg-default flex flex-col justify-center align-middle items-center"
+      className="w-full fixed top-0 z-50 left-0 h-full bg-opacity-90 bg-navBlue-400 flex flex-col justify-center align-middle items-center"
     >
       <motion.img
         initial={{ opacity: 0 }}
@@ -110,7 +110,7 @@ function Age({ setIsVerified }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="flex bg-button p-2 rounded text-white text-stroke"
+        className="flex bg-bargreen border p-2 rounded text-white text-stroke"
         onClick={handleVerification}
         type="submit"
         alt="Cheers"

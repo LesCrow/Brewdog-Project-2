@@ -16,7 +16,7 @@ function Header({
 
   return (
     <div>
-      <div className="bg-nav-blue h-20 flex justify-around items-center">
+      <div className="bg-navBlue h-20 flex justify-around items-center">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />

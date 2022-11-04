@@ -17,8 +17,6 @@ module.exports = {
       backgroundImage: {
         basic: "url('src/assets/Brewery_phone.png')",
       },
-
-      colors: {},
     },
   },
   plugins: [],
