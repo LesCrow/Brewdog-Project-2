@@ -4,6 +4,7 @@ import Header from "@components/Header";
 import MenuListDesktop from "@components/MenuListDesktop";
 import MenuListMobile from "@components/MenuListMobile";
 import Beers from "@components/Beers";
+import ContactForm from "@components/ContactForm";
 import Brewery from "./components/Brewery";
 import useWindowSize from "./hooks/useWindowDimension";
 import useOnClickOutside from "./hooks/useOnClickOutside";
@@ -40,6 +41,9 @@ function App() {
 
       <ToastContainer />
       <Beers />
+      <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
+        <ContactForm />{" "}
+      </div>
       <div className="w-screen flex bg-black">
         <Footer />
       </div>
