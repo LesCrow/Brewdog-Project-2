@@ -3,15 +3,15 @@ import React from "react";
 
 function Brewery() {
   return (
-    <div>
-      <img
-        className="absolute  object-fill z-0 top-0 left-0 "
+    <div className="w-full bg-basic bg-cover relative ">
+      {/* <img
+        className="absolute object-cover z-0 top-0 left-0 "
         src="src/assets/Brewery phone.png"
         alt="backgroundImage"
-      />
+      /> */}
 
-      <div className="z-10 relative w-full">
-        <div className="bg-backcolor">
+      <div className="z-10  mt-[400px] relative w-full">
+        <div className="">
           <Title title="BREWERY" />
 
           <img

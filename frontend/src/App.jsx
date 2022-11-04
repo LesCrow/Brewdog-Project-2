@@ -1,9 +1,19 @@
 import Brewery from "./components/Brewery";
+import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "./App.css";
+import Age from "./components/Age";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const [isVerified, setIsVerified] = useState(false);
+
   return (
-    <div className="App">
+    <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
+      {!isVerified && <Age setIsVerified={setIsVerified} />}
       <Brewery />
+
+      <ToastContainer />
     </div>
   );
 }
