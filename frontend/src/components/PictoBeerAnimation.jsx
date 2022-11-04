@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function PictoBeerAnimation({ onClick }) {
   return (
-    <div className="">
+    <div className="z-20">
       <img
         onClick={onClick}
         src="src/assets/animation.gif"
