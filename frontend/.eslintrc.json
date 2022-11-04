@@ -19,6 +19,8 @@
   "rules": {
     "import/no-unresolved": "off",
     "no-console": "off",
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
     "no-restricted-syntax": [
       "error",
       {
@@ -29,6 +31,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/no-unescaped-entities": "off",
+    "react/jsx-no-bind": 0,
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
