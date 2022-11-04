@@ -1,4 +1,4 @@
-import Brewery from "./Brewery";
+import Brewery from "./components/Brewery";
 
 function App() {
   return (
