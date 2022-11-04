@@ -4,10 +4,10 @@ import Header from "@components/Header";
 import MenuListDesktop from "@components/MenuListDesktop";
 import MenuListMobile from "@components/MenuListMobile";
 import Brewery from "./components/Brewery";
-
 import useWindowSize from "./hooks/useWindowDimension";
 import useOnClickOutside from "./hooks/useOnClickOutside";
 import "./App.css";
+import Footer from "./components/Footer";
 import Age from "./components/Age";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -38,6 +38,9 @@ function App() {
       <Brewery />
 
       <ToastContainer />
+      <div className="w-screen flex bg-black">
+        <Footer />
+      </div>
     </div>
   );
 }
