@@ -9,7 +9,7 @@ function BeersCards({ beer, isActive }) {
   }
   return (
     <li
-      className=" w-32 h-100 flex flex-col justify-end items-center text-center relative hover:opacity-5"
+      className=" w-32 h-100 flex flex-col justify-end items-center text-center relative "
       onMouseOver={HandleOverBeer}
       onFocus={HandleOverBeer}
     >
