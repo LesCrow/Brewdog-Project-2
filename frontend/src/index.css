@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 .text-stroke {
-  -webkit-text-stroke: 1px black; /* width and color */
+  -webkit-text-stroke: 1px black;
+  font-family: "Anton";
+}
+
+h2 {
+  -webkit-text-stroke: 1px black;
   font-family: "Anton";
 }

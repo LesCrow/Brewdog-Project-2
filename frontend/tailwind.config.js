@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "nav-blue": "#15616D",
+        backcolor: "#FFECD1",
         default: "#FFECD1",
         button: "#15616D",
+      },
+      backgroundImage: {
+        basic: "url('src/assets/Brewery_phone.png')",
       },
     },
   },

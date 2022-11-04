@@ -40,7 +40,7 @@ function Age({ setIsVerified }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full absolute top-0 left-0 h-full bg-opacity-90 bg-default flex flex-col justify-center align-middle items-center"
+      className="w-full fixed top-0 z-50 left-0 h-full bg-opacity-90 bg-default flex flex-col justify-center align-middle items-center"
     >
       <motion.img
         initial={{ opacity: 0 }}
