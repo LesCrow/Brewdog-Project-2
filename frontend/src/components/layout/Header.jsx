@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import SearchBar from "../SearchBar";
 import PictoBeer from "../PictoBeer";
 import PictoBeerAnimation from "../PictoBeerAnimation";
 
-function Header({ handleDisplayBurger, isBurgerMenuOpen }) {
+function Header() {
   // Display search bar
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   function handleDisplaySearchBar() {
     setIsSearchBarActive(!isSearchBarActive);
+  }
+
+  // Display menu burger
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  function handleDisplayBurger() {
+    setIsBurgerMenuOpen(!isBurgerMenuOpen);
   }
 
   return (
@@ -18,6 +23,7 @@ function Header({ handleDisplayBurger, isBurgerMenuOpen }) {
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
+
         {/* {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
         {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />} */}
 
@@ -52,8 +58,4 @@ function Header({ handleDisplayBurger, isBurgerMenuOpen }) {
   );
 }
 
-Header.propTypes = {
-  isBurgerMenuOpen: PropTypes.bool.isRequired,
-  handleDisplayBurger: PropTypes.func.isRequired,
-};
 export default Header;
