@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SearchBar from "./SearchBar";
-import PictoBeer from "./PictoBeer";
-import PictoBeerAnimation from "./PictoBeerAnimation";
+import SearchBar from "../SearchBar";
+import PictoBeer from "../PictoBeer";
+import PictoBeerAnimation from "../PictoBeerAnimation";
 
-function Header({
-  isBurgerMenuOpen,
-
-  handleDisplayBurger,
-}) {
+function Header({ handleDisplayBurger, isBurgerMenuOpen }) {
+  // Display search bar
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   function handleDisplaySearchBar() {
     setIsSearchBarActive(!isSearchBarActive);
@@ -21,6 +18,8 @@ function Header({
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
+        {/* {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
+        {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />} */}
 
         {/* Logo */}
         <img

@@ -1,9 +1,9 @@
 import React from "react";
-import LegalNotices from "./LegalNotices";
-import Logo from "./Logo";
-import NavLinks from "./NavLinks";
-import NetworkLinks from "./NetworkLinks";
-import NewsletterInput from "./NewsletterInput";
+import LegalNotices from "../LegalNotices";
+import Logo from "../Logo";
+import NavLinks from "../NavLinks";
+import NetworkLinks from "../NetworkLinks";
+import NewsletterInput from "../NewsletterInput";
 
 function Footer() {
   return (
