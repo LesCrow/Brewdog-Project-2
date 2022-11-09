@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 function BeersCards({ beer, isActive }) {
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
 
   function HandleOverBeer() {
     setIsDemo((e) => !e);
@@ -14,8 +15,12 @@ function BeersCards({ beer, isActive }) {
   function HandleOverOpacity() {
     setIsOpacity((j) => !j);
   }
+  function HandleOverDescription() {
+    setShowDescription(!showDescription);
+  }
+
   return (
-    <div className="flex flex-row border-4 h-96">
+    <div className="flex flex-row  h-96">
       <motion.li
         animate={{ scale: isOpacity ? 1.2 : 1 }}
         initial={{ scale: 1 }}
@@ -57,17 +62,28 @@ function BeersCards({ beer, isActive }) {
             ""
           )}
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center items-center">
           <button
             type="button"
-            className="text-sm bg-bargreen rounded-md flex justify-center w-auto "
+            className="text-sm bg-bargreen rounded-md flex justify-center items-center w-20 mb-2 h-6"
           >
             Panier
           </button>
 
-          <button type="button" className="text-sm bg-backpink rounded-md flex">
+          <button
+            type="button"
+            className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6"
+            onClick={HandleOverDescription}
+          >
             Description
           </button>
+          {showDescription ? (
+            <div>
+              <h1 className="absolute">{beer.description}</h1>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </motion.li>
     </div>
