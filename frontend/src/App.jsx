@@ -8,6 +8,8 @@ import ContactForm from "@components/ContactForm";
 import Brewery from "./components/Brewery";
 import useWindowSize from "./hooks/useWindowDimension";
 import useOnClickOutside from "./hooks/useOnClickOutside";
+import Home from "./components/Home";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Footer from "./components/Footer";
 import Age from "./components/Age";
@@ -33,6 +35,7 @@ function App() {
         handleDisplayBurger={handleDisplayBurger}
         isBurgerMenuOpen={isBurgerMenuOpen}
       />
+      <Home />
 
       {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
       {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />}
