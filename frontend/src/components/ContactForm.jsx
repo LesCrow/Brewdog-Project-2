@@ -26,8 +26,8 @@ function ContactForm() {
         <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">
-        <div className="mb-3 pt-0">
-          <h1 className="text-bargreen text-center text-4xl  text-stroke">
+        <div className="mb-3 pt-0 ">
+          <h1 className="text-bargreen text-center text-4xl  text-stroke ">
             CONTACT
           </h1>
           <img className="p-5" src="src/assets/dogtop.jpeg" alt="banimage" />
@@ -51,7 +51,7 @@ function ContactForm() {
                 required
               />
             </div>
-            <div className="mb-3 pt-0">
+            <div className="mb-3 pt-0 ">
               <input
                 type="email"
                 placeholder="Email"
@@ -60,6 +60,16 @@ function ContactForm() {
                 required
               />
             </div>
+            <div className="mb-3 pt-0 ">
+              <input
+                type="Object"
+                placeholder="Object"
+                name="Object"
+                className="border 3px border-black px-3 py-3 placeholder-gray-400 text-gray-600 relative  bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
+                required
+              />
+            </div>
+
             <div className="mb-3 pt-0">
               <textarea
                 placeholder="Message"

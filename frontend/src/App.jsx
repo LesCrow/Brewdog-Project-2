@@ -36,10 +36,10 @@ function App() {
 
       {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
       {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />}
-      {!isVerified && <Age setIsVerified={setIsVerified} />}
+      {/* {!isVerified && <Age setIsVerified={setIsVerified} />} */}
       <Brewery />
 
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <Beers />
       <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
         <ContactForm />{" "}
