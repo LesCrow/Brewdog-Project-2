@@ -14,22 +14,11 @@ function App() {
     <div>
       {!isVerified && <Age setIsVerified={setIsVerified} />}
       <ToastContainer />
+
       <Brewery />
-      {/* <Header
-        handleDisplayBurger={handleDisplayBurger}
-        isBurgerMenuOpen={isBurgerMenuOpen}
-      />
 
-     
-      
-      
-      
-
-    
-      <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
+      {/* <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
         <ContactForm />{" "}
-      </div>
-
       </div> */}
     </div>
   );

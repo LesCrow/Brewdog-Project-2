@@ -2,7 +2,7 @@ import React from "react";
 
 function NewsletterInput() {
   return (
-    <div className="flex w-full m-3">
+    <div className="flex w-full m-">
       <div className=" bg-cream p-2 border-2 border-black h-full flex justify-center items-center align-middle ">
         <p>EMAIL</p>
       </div>

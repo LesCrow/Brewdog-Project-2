@@ -7,7 +7,7 @@ import NewsletterInput from "../NewsletterInput";
 
 function Footer() {
   return (
-    <div className="flex flex-col justify-center items-center p-5 bg-navBlue w-full  h-354">
+    <div className="flex flex-col justify-center items-center p-5 bg-navBlue w-full h-354 relative z-50">
       <Logo />
       <NewsletterInput />
       <NavLinks />

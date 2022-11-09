@@ -11,7 +11,7 @@ const MenuListDesktop = forwardRef((_, ref) => {
         transition={{ type: "spring" }}
         className="absolute  bg-bargreen w-[3000px] h-[200vh] border-r-8 border-black"
       />
-      <motion.ul className="relative z-10">
+      <motion.ul className="relative">
         <MenuLinks />
       </motion.ul>
     </motion.nav>
