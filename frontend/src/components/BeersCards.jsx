@@ -1,41 +1,76 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import { motion } from "framer-motion";
+
 function BeersCards({ beer, isActive }) {
-  const [isDemo, setIsDemo] = useState("false");
+  const [isDemo, setIsDemo] = useState(false);
+  const [isOpacity, setIsOpacity] = useState(false);
 
   function HandleOverBeer() {
     setIsDemo((e) => !e);
   }
+
+  function HandleOverOpacity() {
+    setIsOpacity((j) => !j);
+  }
   return (
-    <li
-      className=" w-32 h-100 flex flex-col justify-end items-center text-center relative "
-      onMouseOver={HandleOverBeer}
-      onFocus={HandleOverBeer}
-    >
-      <img
-        src={beer.image_url}
-        alt={beer.name}
-        className={
-          isDemo ? "hover:rotate-12 duration-75 h-52 w-16" : "h-52 w-16"
-        }
-      />
-      <h2 className="font-extrabold  hover:underline-offset-auto  ">
-        {beer.name}
-      </h2>
-      <p className="text-bargreen font-semibold underline"> {beer.abv}%</p>
-      <p className=" text-xs">{beer.tagline}</p>
-      <p className="text-backpink font-semibold">{beer.target_fg} JA$</p>
-      {isActive ? (
-        <p className="">
-          {beer.food_pairing.map((e) => (
-            <li className="">{e}.</li>
-          ))}
-        </p>
-      ) : (
-        ""
-      )}
-    </li>
+    <div className="flex flex-row border-4 h-96">
+      <motion.li
+        animate={{ scale: isOpacity ? 1.2 : 1 }}
+        initial={{ scale: 1 }}
+        className="relative flex flex-col justify-center items-center"
+        onMouseEnter={HandleOverOpacity}
+        onMouseLeave={HandleOverOpacity}
+      >
+        {isOpacity && (
+          <div className="absolute">
+            <p className="text-bargreen font-semibold">{beer.tagline}</p>
+          </div>
+        )}
+        <div
+          className={
+            isOpacity
+              ? "w-32 h-100  flex flex-col justify-end items-center text-center relative opacity-10"
+              : "w-32 h-100  flex flex-col justify-end items-center text-center relative"
+          }
+        >
+          <img
+            onMouseEnter={HandleOverBeer}
+            onMouseLeave={HandleOverBeer}
+            src={beer.image_url}
+            alt={beer.name}
+            className={
+              isDemo ? "hover:rotate-12 duration-75 h-52 w-16" : "h-52 w-16"
+            }
+          />
+          <h2 className="hover:underline-offset-auto  ">{beer.name}</h2>
+          <p className="text-bargreen font-semibold underline"> {beer.abv}%</p>
+          <p className="text-backpink font-semibold">{beer.target_fg} JA$</p>
+          {isActive ? (
+            <p className="">
+              {beer.food_pairing.map((e) => (
+                <li className="">{e}.</li>
+              ))}
+            </p>
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="flex flex-col">
+          <button
+            type="button"
+            className="text-sm bg-bargreen rounded-md flex justify-center w-auto "
+          >
+            Panier
+          </button>
+
+          <button type="button" className="text-sm bg-backpink rounded-md flex">
+            Description
+          </button>
+        </div>
+      </motion.li>
+    </div>
   );
 }
 
