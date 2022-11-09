@@ -18,6 +18,9 @@ function BeersCards({ beer, isActive }) {
   function HandleOverDescription() {
     setShowDescription(!showDescription);
   }
+  function closePopUp() {
+    setShowDescription(false);
+  }
 
   return (
     <div className="flex flex-row  h-96">
@@ -78,8 +81,11 @@ function BeersCards({ beer, isActive }) {
             Description
           </button>
           {showDescription ? (
-            <div>
-              <h1 className="absolute">{beer.description}</h1>
+            <div className="absolute bg-slate-600 h-96 w-full">
+              <h1>{beer.description}</h1>
+              <p onClick={closePopUp} className="text-lg font-extrabold">
+                X
+              </p>
             </div>
           ) : (
             ""
