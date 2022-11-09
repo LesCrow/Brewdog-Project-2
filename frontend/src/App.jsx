@@ -12,6 +12,7 @@ import useOnClickOutside from "./hooks/useOnClickOutside";
 import Footer from "./components/Footer";
 import Age from "./components/Age";
 import "react-toastify/dist/ReactToastify.css";
+import Message from "./components/Messages";
 
 function App() {
   const [isVerified, setIsVerified] = useState(false);
