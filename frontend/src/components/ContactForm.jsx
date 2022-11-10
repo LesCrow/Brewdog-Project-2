@@ -14,8 +14,8 @@ function ContactForm() {
   if (submitted) {
     return (
       <>
-        <div className="text-2xl">Thank you!</div>
-        <div className="text-md">We will contact you soon</div>
+        <div className="text-2xl">Thanks!</div>
+        <div className="text-md">We will contact you soon.</div>
       </>
     );
   }
@@ -26,15 +26,15 @@ function ContactForm() {
         <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">
-        <div className="mb-3 pt-0">
-          <h1 className="text-bargreen text-center text-4xl  text-stroke">
+        <div className="mb-3 pt-0 ">
+          <h1 className="text-bargreen text-center text-4xl  text-stroke ">
             CONTACT
           </h1>
           <img className="p-5" src="src/assets/dogtop.jpeg" alt="banimage" />
         </div>
         <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
           <form
-            className="bg-backgreen border 3px border-black	shadow-md rounded px-52 pt-40 pb-8 m-10"
+            className="bg-backgreen border 3px border-black	shadow-md rounded w-1/3 px-14 pt-20 pb-8 m-10"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
             method="POST"
@@ -42,16 +42,16 @@ function ContactForm() {
           >
             <p className="flex justify-center">LEAVE US A MESSAGE</p>
 
-            <div className="mb-3 pt-0 my-8">
+            <div className="mb-3 pt-5 my-8">
               <input
                 type="text"
-                placeholder="Nom"
-                name="name"
+                placeholder="Last name"
+                name="Last name"
                 className="border 3px border-black	px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
                 required
               />
             </div>
-            <div className="mb-3 pt-0">
+            <div className="mb-3 pt-5 ">
               <input
                 type="email"
                 placeholder="Email"
@@ -60,7 +60,17 @@ function ContactForm() {
                 required
               />
             </div>
-            <div className="mb-3 pt-0">
+            <div className="mb-3 pt-5 ">
+              <input
+                type="Object"
+                placeholder="Object"
+                name="Object"
+                className="border 3px border-black px-3 py-3 placeholder-gray-400 text-gray-600 relative  bg-white rounded text-sm  shadow outline-none focus:outline-none focus:ring w-full"
+                required
+              />
+            </div>
+
+            <div className="mb-3 pt-5">
               <textarea
                 placeholder="Message"
                 name="message"
@@ -68,18 +78,19 @@ function ContactForm() {
                 required
               />
             </div>
-            <div className="mb-3 pt-0 flex justify-center">
-              <button
+            <div className="mb-3 pt-10 flex justify-end">
+              <motion.button
+                whileHover={{ scale: 1.2 }}
                 className=" bg-black text-white active:bg-blue-600 font-bold uppercase text-sm px-2 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="submit"
               >
-                SEND
-              </button>
+                Send
+              </motion.button>
             </div>
           </form>
           <div className="relative hidden sm:flex md:flex lg:flex  flex-col">
             <motion.div
-              initial={{ x: 1000 }}
+              initial={{ x: -1000 }}
               animate={{ x: 100 }}
               transition={{ delay: 1 }}
               className="text-start relative flex my-10 justify-start w-96 "
