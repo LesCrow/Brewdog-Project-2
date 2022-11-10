@@ -4,12 +4,12 @@ import MenuLinks from "./MenuLinks";
 
 const MenuListDesktop = forwardRef((_, ref) => {
   return (
-    <motion.nav ref={ref} className="bg-bargreen relative w-1/3 h-[100vh] ">
+    <motion.nav ref={ref} className="bg-bargreen relative w-1/3 ">
       <motion.div
-        animate={{ right: -300, rotate: "-20deg", top: 0 }}
+        animate={{ right: -300, rotate: "-15deg", top: -200 }}
         initial={{ right: 0 }}
         transition={{ type: "spring" }}
-        className="absolute  bg-bargreen w-[3000px] h-[200vh] border-r-8 border-black"
+        className="absolute  bg-bargreen w-[900px] h-[1280px] border-r-8 border-black"
       />
       <motion.ul className="relative">
         <MenuLinks />

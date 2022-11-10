@@ -13,14 +13,14 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
   return (
     <div>
-      <div className="bg-navBlue h-20 flex justify-around items-center ">
+      <div className="bg-navBlue h-50 flex justify-around items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
         {/* Logo */}
         <img
-          className="h-24 w-20 mt-8 ml-4"
+          className="h-28 w-24 mt-6 mb-6 ml-4"
           src="src/assets/logo_brewdog.png"
           alt="brewdog logo"
         />
