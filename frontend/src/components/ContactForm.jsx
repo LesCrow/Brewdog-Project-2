@@ -14,8 +14,8 @@ function ContactForm() {
   if (submitted) {
     return (
       <>
-        <div className="text-2xl">Merci!</div>
-        <div className="text-md">Nous vous contacterons bientôt.</div>
+        <div className="text-2xl">Thank you!</div>
+        <div className="text-md">We will contact you soon</div>
       </>
     );
   }
@@ -40,7 +40,7 @@ function ContactForm() {
             method="POST"
             target="_blank"
           >
-            <p className="flex justify-center">LAISSEZ NOUS UN MESSAGE</p>
+            <p className="flex justify-center">LEAVE US A MESSAGE</p>
 
             <div className="mb-3 pt-0 my-8">
               <input
@@ -73,7 +73,7 @@ function ContactForm() {
                 className=" bg-black text-white active:bg-blue-600 font-bold uppercase text-sm px-2 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="submit"
               >
-                Envoyer
+                SEND
               </button>
             </div>
           </form>

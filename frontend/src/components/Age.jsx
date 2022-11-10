@@ -31,9 +31,9 @@ function Age({ setIsVerified }) {
         notify("Bienvenue sur notre site");
         return setIsVerified(true);
       }
-      return notify("Interdit aux mineurs !");
+      return notify("Prohibited for minors !");
     }
-    return notify("Veuillez remplir tous les champs");
+    return notify("Please complete all fields");
   };
 
   return (
