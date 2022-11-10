@@ -1,26 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import { motion, AnimatePresence } from "framer-motion";
-
-const dropIn = {
-  hidden: { y: "-100vh" },
-  visible: {
-    y: "0",
-    opacity: "1",
-    transition: {
-      duration: 0.9,
-      type: "spring",
-      damping: 15,
-      stiffness: 300,
-    },
-  },
-  exit: { y: "100vh" },
-};
+import { motion } from "framer-motion";
+import useOnClickOutside from "../hooks/useOnClickOutside";
+import Popup from "./Popup";
 
 function BeersCards({ beer, isActive }) {
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
+
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => setShowDescription(false));
 
   function HandleOverBeer() {
     setIsDemo((e) => !e);
@@ -29,9 +20,9 @@ function BeersCards({ beer, isActive }) {
   function HandleOverOpacity() {
     setIsOpacity((j) => !j);
   }
-  function HandleOverDescription() {
-    setShowDescription(!showDescription);
-  }
+  // function HandleOverDescription() {
+  //   setShowDescription(!showDescription);
+  // }
   function closePopUp() {
     setShowDescription(false);
   }
@@ -88,60 +79,15 @@ function BeersCards({ beer, isActive }) {
             whileHover={{ scale: 1.2 }}
             type="button"
             className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6"
-            onClick={HandleOverDescription}
+            onClick={() => setShowDescription(true)}
           >
             Description
           </motion.button>
-          <AnimatePresence initial={false} onExitComplete={() => null}>
-            {" "}
-            {showDescription && (
-              <motion.div
-                variants={dropIn}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                onClick={() => setShowDescription(!showDescription)}
-                className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"
-              >
-                <div className="w-[600px] flex flex-col bg-white bg-opacity-70 rounded-lg">
-                  <motion.button
-                    whileHover={{ scale: 1.2 }}
-                    className="text-white text-xl"
-                    type="button"
-                    onClick={closePopUp}
-                  >
-                    X
-                  </motion.button>
-                  <div className="p-2 flex flex-col items-center">
-                    <img
-                      className="h-52 w-16 "
-                      src={beer.image_url}
-                      alt="Une biere"
-                    />
-                    <h2 className="">{beer.name}</h2>
-
-                    <h1>{beer.description}</h1>
-                  </div>
-                  <div className="flex flex-row justify-around">
-                    <p className="text-bargreen font-semibold underline ">
-                      {" "}
-                      {beer.abv}%
-                    </p>
-                    <p className="text-backpink font-semibold ">
-                      {beer.target_fg} JA$
-                    </p>
-                    <motion.button
-                      whileHover={{ scale: 1.2 }}
-                      type="button"
-                      className="text-sm bg-bargreen rounded-md   w-20 mb-2 h-6 "
-                    >
-                      Panier
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <Popup
+            beer={beer}
+            closePopUp={closePopUp}
+            showDescription={showDescription}
+          />
         </div>
       </li>
     </div>
