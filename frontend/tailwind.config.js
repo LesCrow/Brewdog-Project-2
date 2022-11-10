@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundImage: {
         basic: "url('src/assets/Brewery_phone.png')",
+        home: "url('src/assets/Home phone.png')",
       },
     },
   },
