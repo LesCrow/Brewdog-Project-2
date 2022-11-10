@@ -1,10 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import { React, useState } from "react";
-
-// import ContactForm from "@components/ContactForm";
-import Brewery from "./components/Brewery";
-
 import Age from "./components/Age";
+import Beers from "./components/Beers";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -14,12 +11,7 @@ function App() {
     <div>
       {!isVerified && <Age setIsVerified={setIsVerified} />}
       <ToastContainer />
-
-      <Brewery />
-
-      {/* <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
-        <ContactForm />{" "}
-      </div> */}
+      <Beers />
     </div>
   );
 }
