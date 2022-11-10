@@ -1,21 +1,30 @@
+/* eslint-disable no-restricted-syntax */
 import React from "react";
 import { toast, useToast } from "react-toastify";
+import { motion } from "framer-motion";
 
 // import useWindowSize from "./hooks/useWindowDimension";
 
-function NewsletterInput() {
-  // const size = useWindowSize();
-  // const { width } = size;s
+// const size = useWindowSize();
+// const { width } = size;
 
+function NewsletterInput() {
   const [email, setEmail] = React.useState("");
   const notify = (message) => toast(message);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email.length > 10) {
+
+    if (
+      email.match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+    ) {
       notify(
         "Thank your for your subscription ! You will now recieve our news in your mailbox !"
       );
+    } else {
+      notify("Please enter a valid email");
     }
   };
 
@@ -30,14 +39,14 @@ function NewsletterInput() {
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="text"
-              placeholder="🔔ENTREZ VOTRE EMAIL🔔"
+              placeholder="🔔   Enter your Email ... "
               value={email}
               className="w-full focus:border-black focus:outline-none px-5 border-2 border-black bg-navBlue-400"
             />
             <input
               className="cursor-pointer hover:opacity-50 border-2 p-2 border-black"
               type="submit"
-              value="Submit"
+              value="SUBMIT"
             />
           </div>
         </form>
