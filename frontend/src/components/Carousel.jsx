@@ -3,34 +3,29 @@ import { Carousel } from "react-responsive-carousel";
 
 export default function MyCarousel() {
   return (
-    <Carousel infiniteLoop showThumbs={false} autoPlay>
-      <div className="p-4 w-96">
-        <img alt="" src="src/assets/1612-10730.jpg" />
+    <div className="flex justify-center items-center">
+      <div className="flex  md:w-1/2 md:flex lg:felx lg:1/3 ">
+        <Carousel infiniteLoop showThumbs={false} autoPlay>
+          <div>
+            <img alt="" src="src/assets/gluten-free_punk_-_1050x1050_1_1.png" />
+          </div>
+          <div>
+            <img alt="" src="src/assets/arcade_made_1050x1050_1_7.png" />
+          </div>
+          <div>
+            <img alt="" src="src/assets/hazypassionfruit_3.png" />
+          </div>
+          <div>
+            <img alt="" src="src/assets/hazy_jane_guava_4.png" />
+          </div>
+          <div>
+            <img alt="" src="src/assets/headliner_hazy_jane_1__2.png" />
+          </div>
+          <div>
+            <img alt="" src="src/assets/blueprint_digitalassets_1.8_1_.png" />
+          </div>
+        </Carousel>
       </div>
-      <div className="p-4">
-        <img
-          alt=""
-          src="src/assets/37094-0w470h470_Brewdog_Punk_Ipa_Biere_Ecossaise.jpg"
-        />
-      </div>
-      <div className="p-4">
-        <img alt="" src="src/assets/Brewdog-arcade-made-cans-33.webp" />
-      </div>
-      <div className="p-4">
-        <img
-          alt=""
-          src="src/assets/brewdog-indie-beer-06-2022-5056025408920-32160106381475.webp"
-        />
-      </div>
-      <div className="p-4">
-        <img alt="" src="src/assets/brewdog-PunkIPA-2021_1800w.jpg" />
-      </div>
-      <div className="p-4">
-        <img alt="" src="src/assets/fifty_fifty_-_pdp_1_2_1.jpg" />
-      </div>
-      <div className="p-4">
-        <img alt="" src="src/assets/media.auchan.png" />
-      </div>
-    </Carousel>
+    </div>
   );
 }
