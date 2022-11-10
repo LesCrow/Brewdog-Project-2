@@ -41,9 +41,7 @@ function App() {
 
       <ToastContainer />
       <Beers />
-      <div className="w-screen bg-black min-h-screen flex relative items-center align-middle justify-center">
-        <ContactForm />{" "}
-      </div>
+
       <div className="w-screen flex bg-black">
         <Footer />
       </div>
