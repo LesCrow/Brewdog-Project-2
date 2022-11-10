@@ -8,7 +8,7 @@ function MenuListMobile() {
       initial={{ x: -1000 }}
       animate={{ x: 0 }}
       transition={{ delay: 0.2, type: "just" }}
-      className="bg-navBlue-400"
+      className="bg-navBlue"
     >
       <ul>
         <MenuLinks />

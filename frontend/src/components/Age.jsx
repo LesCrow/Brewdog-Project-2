@@ -28,7 +28,7 @@ function Age({ setIsVerified }) {
     if (year && month && day) {
       const todayYear = today.getFullYear();
       if (todayYear - year >= 18) {
-        notify("Bienvennue sur notre site");
+        notify("Bienvenue sur notre site");
         return setIsVerified(true);
       }
       return notify("Interdit aux mineurs !");

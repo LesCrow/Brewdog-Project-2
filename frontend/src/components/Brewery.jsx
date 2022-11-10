@@ -10,7 +10,7 @@ function Brewery() {
         alt="backgroundImage"
       /> */}
 
-      <div className="z-10  mt-[30px] relative w-full">
+      <div className="z-10 relative w-full">
         <div className="">
           <Title title="BREWERY" />
 
@@ -24,7 +24,7 @@ function Brewery() {
           <h2 className="text-left  text-2xl text-white ">
             NOTRE BRASSERIE A ELLON
           </h2>
-          <h3 className=" text-right text-2xl p-2">Ingredients</h3>
+          <h3 className=" text-right text-2xl p-2">INGREDIENTS</h3>
           <p className="text-right text-[15px]">
             Il ne faut que 4 ingrédients pour brasser de la bière, mais ce que
             nous faisons avec ces ingrédients est ce qui la rend spéciale.
