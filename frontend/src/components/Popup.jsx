@@ -1,13 +1,12 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from "react";
+import React, { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
+import useOnClickOutside from "../hooks/useOnClickOutside";
 
 const dropIn = {
-  hidden: { y: "-100vh" },
+  hidden: { opacity: 0 },
   visible: {
-    y: "0",
-    opacity: "1",
+    opacity: 1,
     transition: {
       duration: 0.9,
       type: "spring",
@@ -15,18 +14,18 @@ const dropIn = {
       stiffness: 300,
     },
   },
-  exit: { y: "100vh" },
+  exit: { opacity: 0 },
 };
 
 function Popup({ beer, open, onClose }) {
-  if (!open) return null;
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => onClose());
 
   return (
     <AnimatePresence initial={false} onExitComplete={() => null}>
-      {" "}
       {open && (
         <motion.div
-          onClick={onClose}
           variants={dropIn}
           initial="hidden"
           animate="visible"
@@ -34,11 +33,12 @@ function Popup({ beer, open, onClose }) {
           className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"
         >
           <div
-            className="w-[600px] flex flex-col bg-white bg-opacity-70 rounded-lg"
-            onClick={(e) => e.stopPropagation()}
+            className="w-[600px] flex flex-col bg-white bg-opacity-70
+            rounded-lg"
+            ref={ref}
           >
             <button
-              className="text-white text-xl font-extrabold flex justify-end mr-4 mt-2"
+              className="text-white text-xl font-extrabold flex justify-end mr-4 mt-2 "
               type="button"
               onClick={onClose}
             >
