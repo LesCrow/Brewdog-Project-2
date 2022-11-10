@@ -1,11 +1,7 @@
-import React, { useState, useRef } from "react";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
-
-const ref = useRef();
-const [showDescription, setShowDescription] = useState(false);
-
-useOnClickOutside(ref, () => setShowDescription(false));
 
 const dropIn = {
   hidden: { y: "-100vh" },
@@ -22,29 +18,32 @@ const dropIn = {
   exit: { y: "100vh" },
 };
 
-function Popup({ beer, closePopUp }) {
+function Popup({ beer, open, onClose }) {
+  if (!open) return null;
+
   return (
     <AnimatePresence initial={false} onExitComplete={() => null}>
       {" "}
-      {showDescription && (
+      {open && (
         <motion.div
-          ref={ref}
+          onClick={onClose}
           variants={dropIn}
           initial="hidden"
           animate="visible"
           exit="exit"
-          onClick={closePopUp}
           className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"
         >
-          <div className="w-[600px] flex flex-col bg-white bg-opacity-70 rounded-lg">
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              className="text-white text-xl"
+          <div
+            className="w-[600px] flex flex-col bg-white bg-opacity-70 rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="text-white text-xl font-extrabold flex justify-end mr-4 mt-2"
               type="button"
-              onClick={closePopUp}
+              onClick={onClose}
             >
               X
-            </motion.button>
+            </button>
             <div className="p-2 flex flex-col items-center">
               <img
                 className="h-52 w-16 "
@@ -79,6 +78,7 @@ function Popup({ beer, closePopUp }) {
 }
 Popup.propTypes = {
   beer: PropTypes.objectOf().isRequired,
-  closePopUp: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 export default Popup;

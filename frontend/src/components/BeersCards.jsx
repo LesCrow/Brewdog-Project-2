@@ -1,12 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import useOnClickOutside from "../hooks/useOnClickOutside";
 import Popup from "./Popup";
 
 function BeersCards({ beer, isActive }) {
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
+  const [openDescription, setOpenDescription] = useState(false);
 
   function HandleOverBeer() {
     setIsDemo((e) => !e);
@@ -14,12 +14,6 @@ function BeersCards({ beer, isActive }) {
 
   function HandleOverOpacity() {
     setIsOpacity((j) => !j);
-  }
-  // function HandleOverDescription() {
-  //   setShowDescription(!showDescription);
-  // }
-  function closePopUp() {
-    setShowDescription(false);
   }
 
   return (
@@ -74,14 +68,14 @@ function BeersCards({ beer, isActive }) {
             whileHover={{ scale: 1.2 }}
             type="button"
             className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6"
-            onClick={() => setShowDescription(true)}
+            onClick={() => setOpenDescription(true)}
           >
             Description
           </motion.button>
           <Popup
             beer={beer}
-            closePopUp={closePopUp}
-            showDescription={showDescription}
+            open={openDescription}
+            onClose={() => setOpenDescription(false)}
           />
         </div>
       </li>
