@@ -22,15 +22,15 @@ function Brewery() {
         </div>
         <div className="w-full p-10">
           <h2 className="text-left  text-2xl text-white ">
-            NOTRE BRASSERIE A ELLON
+            OUR BREWERY IN ELLON
           </h2>
           <h3 className=" text-right text-2xl p-2">INGREDIENTS</h3>
           <p className="text-right text-[15px]">
-            Il ne faut que 4 ingrédients pour brasser de la bière, mais ce que
-            nous faisons avec ces ingrédients est ce qui la rend spéciale.
-            L'orge maltée la plus fine, le houblon de haute qualité, l'eau de
-            source écossaise purifiée et nos propres souches de levure maison se
-            réunissent en harmonie pour créer de la bière pour tous.
+            It only takes 4 ingredients to brew beer, but what we make with
+            these ingredients is what makes it special. The finest malted
+            barley, high quality hops, water from purified Scottish source and
+            our own in-house yeast strains come together in harmony to create
+            beer for all.
           </p>
         </div>
         <img
@@ -40,13 +40,12 @@ function Brewery() {
         />
         <div className="w-full p-10">
           <h3 className="text-center text-2xl p-[10px] font-normal hover:font-bold">
-            DE LA BONNE BIÈRE QUI FAIT DU BIEN
+            GOOD BEER THAT FEELS GOOD
           </h3>
           <p className="text-center text-[15px]">
-            La qualité exceptionnelle est la pierre angulaire de notre
-            brasserie. Toutes les bières BrewDog sont brassées à partir d'orge
-            maltée et de houblon de la meilleure qualité provenant des meilleurs
-            producteurs du monde entier.
+            Exceptional quality is the cornerstone of our brewery. All BrewDog
+            beers are brewed from barley top quality malt and hops from the best
+            producers around the world.
           </p>
         </div>
         <img
@@ -56,16 +55,14 @@ function Brewery() {
         />
         <div className="w-full p-10">
           <h3 className="text-left text-2xl font-normal hover:font-bold">
-            TECHNIQUE DE BRASSAGE
+            BREWING TECHNIQUE
           </h3>
 
           <p className="text-left p-2">
-            Notre brasserie ultramoderne de l'Aberdeenshire est le royaume de
-            l'acier et des rêves. Nous disposons de 3 sites de brassage et d'un
-            kit pilote d'innovation. Nous utilisons également l'énergie éolienne
-            pour fabriquer notre bière, ainsi que des sous-produits de brassage
-            (comme le CO2, l'eau et le biométhane) pour aider à la fabrication
-            de la bière.
+            Our state-of-the-art Aberdeenshire brewery is the kingdom of steel
+            and dreams. We have 3 brewing sites and a innovation pilot kit. We
+            also use wind power to make our beer, as well as brewing by-products
+            (such as CO2, water and biomethane) to help manufacture some beer.
           </p>
           <h1 className="text-5xl text-center  text-nav-blue bord ">#BREW</h1>
         </div>
