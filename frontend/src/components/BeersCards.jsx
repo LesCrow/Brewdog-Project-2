@@ -7,11 +7,6 @@ import Popup from "./Popup";
 function BeersCards({ beer, isActive }) {
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
-  const [showDescription, setShowDescription] = useState(false);
-
-  const ref = useRef();
-
-  useOnClickOutside(ref, () => setShowDescription(false));
 
   function HandleOverBeer() {
     setIsDemo((e) => !e);
