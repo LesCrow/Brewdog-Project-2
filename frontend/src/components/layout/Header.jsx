@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SearchBar from "./SearchBar";
-import PictoBeer from "./PictoBeer";
-import PictoBeerAnimation from "./PictoBeerAnimation";
+import SearchBar from "../SearchBar";
+import PictoBeer from "../PictoBeer";
+import PictoBeerAnimation from "../PictoBeerAnimation";
 
-function Header({
-  isBurgerMenuOpen,
-
-  handleDisplayBurger,
-}) {
+function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
+  // Display search bar
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   function handleDisplaySearchBar() {
     setIsSearchBarActive(!isSearchBarActive);
@@ -16,15 +13,14 @@ function Header({
 
   return (
     <div>
-      <div className="bg-navBlue h-20 flex justify-around items-center">
+      <div className="bg-navBlue h-50 flex justify-around items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
-
         {/* Logo */}
         <img
-          className="h-24 w-20 mt-8 ml-4"
+          className="h-28 w-24 mt-6 mb-6 ml-4"
           src="src/assets/logo_brewdog.png"
           alt="brewdog logo"
         />
@@ -57,4 +53,5 @@ Header.propTypes = {
   isBurgerMenuOpen: PropTypes.bool.isRequired,
   handleDisplayBurger: PropTypes.func.isRequired,
 };
+
 export default Header;
