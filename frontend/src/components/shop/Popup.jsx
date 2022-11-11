@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
-import useOnClickOutside from "../hooks/useOnClickOutside";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 
 const dropIn = {
   hidden: { opacity: 0 },
