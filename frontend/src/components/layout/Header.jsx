@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SearchBar from "../SearchBar";
-import PictoBeer from "../PictoBeer";
-import PictoBeerAnimation from "../PictoBeerAnimation";
+import SearchBar from "../header/SearchBar";
+import PictoBeer from "../header/PictoBeer";
+import PictoBeerAnimation from "../header/PictoBeerAnimation";
 
 function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   // Display search bar

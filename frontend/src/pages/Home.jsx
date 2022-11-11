@@ -1,6 +1,6 @@
-import Title from "@components/Title";
 import React from "react";
-import MyCarousel from "../components/Carousel";
+import Title from "../components/global/Title";
+import MyCarousel from "../components/home/Carousel";
 
 function Home() {
   return (

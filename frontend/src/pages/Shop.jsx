@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import BeersCards from "../components/BeersCards";
+import BeersCards from "../components/shop/BeersCards";
 
 const typeBoxes = [
   "Trier par : ",

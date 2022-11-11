@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import { days, months, years } from "../utils/constants";
+import { days, months, years } from "../../utils/constants";
 
 function Age({ setIsVerified }) {
   const [month, setMonths] = useState("");
