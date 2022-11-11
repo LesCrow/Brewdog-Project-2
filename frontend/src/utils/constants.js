@@ -16,3 +16,5 @@ export const months = [
 ];
 
 export const years = new Array(101).fill(null).map((_, index) => 2022 - index);
+
+export const menuLinks = ["THE SHOP", "THE BREWERY", "CONTACT US"];

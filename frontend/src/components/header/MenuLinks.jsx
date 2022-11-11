@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const menuLinks = ["THE SHOP", "THE BREWERY", "CONTACT US"];
+import { menuLinks } from "../../utils/constants";
 
 function MenuLinks() {
   return (

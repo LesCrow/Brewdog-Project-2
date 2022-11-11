@@ -5,8 +5,8 @@ import useWindowSize from "../../hooks/useWindowDimension";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import Header from "./Header";
 import Footer from "./Footer";
-import MenuListMobile from "../header/MenuListMobile";
-import MenuListDesktop from "../header/MenuListDesktop";
+import MenuListMobile from "../header/MenuMobile";
+import MenuListDesktop from "../header/MenuDesktop";
 
 import Age from "../Age";
 import "react-toastify/dist/ReactToastify.css";
