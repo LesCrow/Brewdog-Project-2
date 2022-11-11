@@ -1,12 +1,21 @@
-import React from "react";
-import Home from "./components/Home";
+import { ToastContainer } from "react-toastify";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import Age from "./components/Age";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        {/* Si l'url ne corresond à rien de déclaré */}
+        <Route path="/*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
