@@ -1,11 +1,15 @@
 import { React, useState, useRef } from "react";
 import PropTypes from "prop-types";
+import { ToastContainer } from "react-toastify";
 import useWindowSize from "../../hooks/useWindowDimension";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import Header from "./Header";
 import Footer from "./Footer";
 import MenuListMobile from "../MenuListMobile";
 import MenuListDesktop from "../MenuListDesktop";
+
+import Age from "../Age";
+import "react-toastify/dist/ReactToastify.css";
 
 function Layout({ children }) {
   // Hook to get window size
@@ -21,8 +25,12 @@ function Layout({ children }) {
   const ref = useRef();
   useOnClickOutside(ref, () => setIsBurgerMenuOpen(false));
 
+  const [isVerified, setIsVerified] = useState(false);
+
   return (
     <div>
+      {!isVerified && <Age setIsVerified={setIsVerified} />}
+      <ToastContainer />
       <Header
         isBurgerMenuOpen={isBurgerMenuOpen}
         handleDisplayBurger={handleDisplayBurger}
