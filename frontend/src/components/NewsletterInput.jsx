@@ -2,11 +2,6 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-// import useWindowSize from "./hooks/useWindowDimension";
-
-// const size = useWindowSize();
-// const { width } = size;
-
 function NewsletterInput() {
   const [email, setEmail] = React.useState("");
   const notify = (message) => toast(message);
