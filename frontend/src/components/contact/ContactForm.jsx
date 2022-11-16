@@ -1,28 +1,24 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { toast } from "react-toastify";
 
 const FORM_ENDPOINT = "";
 
 function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = () => {
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 100);
-  };
+  const notify = (message) => toast(message);
 
-  if (submitted) {
-    return (
-      <>
-        <div className="text-2xl">Thanks!</div>
-        <div className="text-md">We will contact you soon.</div>
-      </>
-    );
-  }
+  const ref2 = useRef(null);
+
+  const inView2 = useInView(ref2);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    return notify("SEND !");
+  };
 
   return (
     <div className="min-h-screen bg-backcolor w-full">
-      <div className="absolute top-0  bg-backcolor left-0 w-full h-full">
+      <div className="absolute  bg-backcolor left-0 w-full h-full">
         <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">
@@ -34,11 +30,10 @@ function ContactForm() {
         </div>
         <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
           <form
-            className="bg-backgreen border 3px border-black	shadow-md rounded w-1/3 px-14 pt-20 pb-8 m-10"
+            ref={ref2}
+            className="bg-backgreen border z-50 3px border-black	shadow-md rounded min-w-full sm:min-w-[400px] px-14 pt-20 pb-8 m-10"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
-            method="POST"
-            target="_blank"
           >
             <p className="flex justify-center">LEAVE US A MESSAGE</p>
 
@@ -90,9 +85,13 @@ function ContactForm() {
           </form>
           <div className="relative hidden sm:flex md:flex lg:flex  flex-col">
             <motion.div
-              initial={{ x: -1000 }}
-              animate={{ x: 100 }}
-              transition={{ delay: 1 }}
+              style={{
+                transform: inView2
+                  ? "translateX(100px)"
+                  : "translateX(-1000px)",
+                opacity: inView2 ? 1 : 0,
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
               className="text-start relative flex my-10 justify-start w-96 "
             >
               <img
@@ -103,9 +102,12 @@ function ContactForm() {
               <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5" />
             </motion.div>
             <motion.div
-              initial={{ x: -1000 }}
-              animate={{ x: 500 }}
-              transition={{ delay: 1.5 }}
+              style={{
+                transform: inView2 ? "translateX(500px)" : "translateX(1000px)",
+                opacity: inView2 ? 1 : 0,
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+              transition={{ delay: 3 }}
               className="text-start flex my-10 relative justify-start  w-96"
             >
               <img
@@ -118,7 +120,7 @@ function ContactForm() {
           </div>
         </div>
         <div>
-          <h2 className="text-bargreen text-center text-4xl  text-stroke ">
+          <h2 className="text-bargreen text-center text-8xl  text-stroke transform translate-y-[20%] ">
             #BREWDOG FAMILY
           </h2>
         </div>

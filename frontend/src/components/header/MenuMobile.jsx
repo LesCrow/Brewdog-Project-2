@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import MenuLinks from "./MenuLinks";
 
-function MenuListMobile() {
+function MenuMobile() {
   return (
     <motion.nav
       initial={{ x: -1000 }}
@@ -17,4 +17,4 @@ function MenuListMobile() {
   );
 }
 
-export default MenuListMobile;
+export default MenuMobile;
