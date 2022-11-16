@@ -5,10 +5,8 @@ const FORM_ENDPOINT = "";
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const ref = useRef(null);
   const ref2 = useRef(null);
 
-  const inView1 = useInView(ref);
   const inView2 = useInView(ref2);
 
   const handleSubmit = () => {
@@ -25,7 +23,7 @@ function ContactForm() {
       </>
     );
   }
-  console.log(inView1, inView2);
+
   return (
     <div className="min-h-screen bg-backcolor w-full">
       <div className="absolute top-0  bg-backcolor left-0 w-full h-full">
