@@ -1,10 +1,16 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const FORM_ENDPOINT = "";
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+
+  const inView1 = useInView(ref);
+  const inView2 = useInView(ref2);
+
   const handleSubmit = () => {
     setTimeout(() => {
       setSubmitted(true);
@@ -19,7 +25,7 @@ function ContactForm() {
       </>
     );
   }
-
+  console.log(inView1, inView2);
   return (
     <div className="min-h-screen bg-backcolor w-full">
       <div className="absolute top-0  bg-backcolor left-0 w-full h-full">
@@ -34,7 +40,8 @@ function ContactForm() {
         </div>
         <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
           <form
-            className="bg-backgreen border 3px border-black	shadow-md rounded w-1/3 px-14 pt-20 pb-8 m-10"
+            ref={ref2}
+            className="bg-backgreen border z-50 3px border-black	shadow-md rounded min-w-full sm:min-w-[400px] px-14 pt-20 pb-8 m-10"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
             method="POST"
@@ -90,9 +97,13 @@ function ContactForm() {
           </form>
           <div className="relative hidden sm:flex md:flex lg:flex  flex-col">
             <motion.div
-              initial={{ x: -1000 }}
-              animate={{ x: 100 }}
-              transition={{ delay: 1 }}
+              style={{
+                transform: inView2
+                  ? "translateX(100px)"
+                  : "translateX(-1000px)",
+                opacity: inView2 ? 1 : 0,
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
               className="text-start relative flex my-10 justify-start w-96 "
             >
               <img
@@ -103,9 +114,12 @@ function ContactForm() {
               <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5" />
             </motion.div>
             <motion.div
-              initial={{ x: -1000 }}
-              animate={{ x: 500 }}
-              transition={{ delay: 1.5 }}
+              style={{
+                transform: inView2 ? "translateX(500px)" : "translateX(1000px)",
+                opacity: inView2 ? 1 : 0,
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+              }}
+              transition={{ delay: 3 }}
               className="text-start flex my-10 relative justify-start  w-96"
             >
               <img
