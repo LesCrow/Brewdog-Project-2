@@ -29,6 +29,7 @@ function Age({ setIsVerified }) {
       const todayYear = today.getFullYear();
       if (todayYear - year >= 18) {
         notify("Welcome to our website");
+        localStorage.setItem("verified", true);
         return setIsVerified(true);
       }
       return notify("Prohibited for minors !");
