@@ -27,7 +27,7 @@ function Layout() {
   const [isVerified, setIsVerified] = useState(false);
 
   return (
-    <div>
+    <div className="font-roboto">
       {!isVerified && <Age setIsVerified={setIsVerified} />}
       <ToastContainer />
       <Header
