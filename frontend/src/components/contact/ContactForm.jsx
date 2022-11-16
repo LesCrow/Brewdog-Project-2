@@ -26,7 +26,7 @@ function ContactForm() {
           <h1 className="text-bargreen text-center text-4xl  text-stroke ">
             CONTACT
           </h1>
-          <img className="p-5" src="src/assets/dogtop.jpeg" alt="banimage" />
+          <img className="p-24" src="src/assets/dogtop.jpeg" alt="banimage" />
         </div>
         <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
           <form
