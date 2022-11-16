@@ -1,17 +1,16 @@
 import { React, useState, useRef } from "react";
-import PropTypes from "prop-types";
 import { ToastContainer } from "react-toastify";
+import { Outlet } from "react-router-dom";
 import useWindowSize from "../../hooks/useWindowDimension";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import Header from "./Header";
 import Footer from "./Footer";
-import MenuListMobile from "../MenuListMobile";
-import MenuListDesktop from "../MenuListDesktop";
-
-import Age from "../Age";
+import MenuMobile from "../header/MenuMobile";
+import MenuDesktop from "../header/MenuDesktop";
+import Age from "../pop-up/Age";
 import "react-toastify/dist/ReactToastify.css";
 
-function Layout({ children }) {
+function Layout() {
   // Hook to get window size
   const size = useWindowSize();
   const { width } = size;
@@ -35,16 +34,20 @@ function Layout({ children }) {
         isBurgerMenuOpen={isBurgerMenuOpen}
         handleDisplayBurger={handleDisplayBurger}
       />
-      {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
-      {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />}
-      {!isBurgerMenuOpen && <main>{children}</main>}
+      {width < 768 && isBurgerMenuOpen && (
+        <MenuMobile isBurgerMenuOpen={isBurgerMenuOpen} />
+      )}
+      {width > 768 && isBurgerMenuOpen && (
+        <MenuDesktop ref={ref} isBurgerMenuOpen={isBurgerMenuOpen} />
+      )}
+      {!isBurgerMenuOpen && (
+        <main>
+          <Outlet />
+        </main>
+      )}
       <Footer />
     </div>
   );
 }
-
-Layout.propTypes = {
-  children: PropTypes.bool.isRequired,
-};
 
 export default Layout;
