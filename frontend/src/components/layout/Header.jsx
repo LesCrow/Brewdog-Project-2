@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";
 import PictoBeerAnimation from "../header/PictoBeerAnimation";
-import ShoppingCart from "../ShoppingCart";
+import ShoppingCart from "../header/ShoppingCart";
 
 function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   // Display search bar
