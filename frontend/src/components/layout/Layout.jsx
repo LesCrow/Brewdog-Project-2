@@ -1,17 +1,16 @@
 import { React, useState, useRef } from "react";
-import PropTypes from "prop-types";
 import { ToastContainer } from "react-toastify";
+import { Outlet } from "react-router-dom";
 import useWindowSize from "../../hooks/useWindowDimension";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import Header from "./Header";
 import Footer from "./Footer";
 import MenuListMobile from "../header/MenuMobile";
 import MenuListDesktop from "../header/MenuDesktop";
-
-import Age from "../Age";
+import Age from "../pop-up/Age";
 import "react-toastify/dist/ReactToastify.css";
 
-function Layout({ children }) {
+function Layout() {
   // Hook to get window size
   const size = useWindowSize();
   const { width } = size;
@@ -37,14 +36,14 @@ function Layout({ children }) {
       />
       {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
       {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />}
-      {!isBurgerMenuOpen && <main>{children}</main>}
+      {!isBurgerMenuOpen && (
+        <main>
+          <Outlet />
+        </main>
+      )}
       <Footer />
     </div>
   );
 }
-
-Layout.propTypes = {
-  children: PropTypes.bool.isRequired,
-};
 
 export default Layout;

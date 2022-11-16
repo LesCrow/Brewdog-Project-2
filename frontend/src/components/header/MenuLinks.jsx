@@ -1,18 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
-import { menuLinks } from "../../utils/constants";
+import { navLinks } from "../../utils/constants";
 
 function MenuLinks() {
   return (
     <div className="w-full h-screen  flex flex-col justify-around items-center text-white text-3xl">
-      {menuLinks.map((link, index) => (
+      {navLinks.map((link, index) => (
         <motion.li
           style={{ fontSize: `${30 + index * 10}px` }}
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 0.1, type: "spring" }}
         >
-          {link}
+          <Link to={link.to}>{link.page}</Link>
         </motion.li>
       ))}
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";
@@ -19,11 +20,13 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
         {/* Logo */}
-        <img
-          className="h-28 w-24 mt-6 mb-6 ml-4"
-          src="src/assets/logo_brewdog.png"
-          alt="brewdog logo"
-        />
+        <Link to="/">
+          <img
+            className="h-28 w-24 mt-6 mb-6 ml-4"
+            src="src/assets/logo_brewdog.png"
+            alt="brewdog logo"
+          />
+        </Link>
 
         {/* Display search bar */}
         <div className="flex justify-between  w-20">
