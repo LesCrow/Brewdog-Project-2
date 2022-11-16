@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 const FORM_ENDPOINT = "";
 
 function ContactForm() {
-
   const ref2 = useRef(null);
 
   const inView2 = useInView(ref2);
@@ -17,7 +16,7 @@ function ContactForm() {
 
   return (
     <div className="min-h-screen bg-backcolor w-full">
-      <div className="absolute top-0  bg-backcolor left-0 w-full h-full">
+      <div className="absolute  bg-backcolor left-0 w-full h-full">
         <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">

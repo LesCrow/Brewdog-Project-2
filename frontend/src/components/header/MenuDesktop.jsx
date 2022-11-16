@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import MenuLinks from "./MenuLinks";
-import image from "../assets/headliner_hazy_jane_1__2.png";
+import image from "../../assets/headliner_hazy_jane_1__2.png";
 
-const MenuListDesktop = forwardRef((_, ref) => {
+const MenuDesktop = forwardRef((_, ref) => {
   return (
     <div className="flex justify-between bg-backcolor">
       <motion.nav ref={ref} className="bg-bargreen relative w-1/3 ">
@@ -22,4 +22,4 @@ const MenuListDesktop = forwardRef((_, ref) => {
   );
 });
 
-export default MenuListDesktop;
+export default MenuDesktop;

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import SearchBar from "../SearchBar";
-import PictoBeer from "../PictoBeer";
-import PictoBeerAnimation from "../PictoBeerAnimation";
+import SearchBar from "../header/SearchBar";
+import PictoBeer from "../header/PictoBeer";
+import PictoBeerAnimation from "../header/PictoBeerAnimation";
 
 function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   // Display search bar
@@ -13,17 +14,19 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
   return (
     <div>
-      <div className="bg-navBlue h-50 flex  items-center ">
+      <div className="bg-navBlue h-50 flex justify-between items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
         {/* Logo */}
-        <img
-          className="h-28 w-24 mt-6 mb-6 m-auto"
-          src="src/assets/logo_brewdog.png"
-          alt="brewdog logo"
-        />
+        <Link to="/">
+          <img
+            className="h-28 w-24 mt-6 mb-6 ml-4"
+            src="src/assets/logo_brewdog.png"
+            alt="brewdog logo"
+          />
+        </Link>
 
         {/* Display search bar */}
         <div className="flex  w-[15%] mr-10 ">

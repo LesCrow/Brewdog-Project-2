@@ -16,3 +16,15 @@ export const months = [
 ];
 
 export const years = new Array(101).fill(null).map((_, index) => 2022 - index);
+
+export const navLinks = [
+  { page: "THE SHOP", to: "/shop" },
+  {
+    page: "THE BREWERY",
+    to: "/brewery",
+  },
+  {
+    page: "CONTACT",
+    to: "/contact",
+  },
+];
