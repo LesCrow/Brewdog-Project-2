@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Brewery from "./pages/Brewery";
-
 import ContactForm from "./components/contact/ContactForm";
 import Layout from "./components/layout/Layout";
 
