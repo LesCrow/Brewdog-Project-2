@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 const FORM_ENDPOINT = "";
 
 function ContactForm() {
-  const notify = (message) => toast(message);
 
   const ref2 = useRef(null);
 
