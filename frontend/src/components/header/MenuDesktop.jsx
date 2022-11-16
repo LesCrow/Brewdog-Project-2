@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import MenuLinks from "./MenuLinks";
 
-const MenuListDesktop = forwardRef((_, ref) => {
+const MenuDesktop = forwardRef((_, ref) => {
   return (
     <motion.nav ref={ref} className="bg-bargreen relative w-1/3 ">
       <motion.div
@@ -18,4 +18,4 @@ const MenuListDesktop = forwardRef((_, ref) => {
   );
 });
 
-export default MenuListDesktop;
+export default MenuDesktop;

@@ -5,8 +5,8 @@ import useWindowSize from "../../hooks/useWindowDimension";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import Header from "./Header";
 import Footer from "./Footer";
-import MenuListMobile from "../header/MenuMobile";
-import MenuListDesktop from "../header/MenuDesktop";
+import MenuMobile from "../header/MenuMobile";
+import MenuDesktop from "../header/MenuDesktop";
 import Age from "../pop-up/Age";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,8 +34,12 @@ function Layout() {
         isBurgerMenuOpen={isBurgerMenuOpen}
         handleDisplayBurger={handleDisplayBurger}
       />
-      {width < 768 && isBurgerMenuOpen && <MenuListMobile />}
-      {width > 768 && isBurgerMenuOpen && <MenuListDesktop ref={ref} />}
+      {width < 768 && isBurgerMenuOpen && (
+        <MenuMobile isBurgerMenuOpen={isBurgerMenuOpen} />
+      )}
+      {width > 768 && isBurgerMenuOpen && (
+        <MenuDesktop ref={ref} isBurgerMenuOpen={isBurgerMenuOpen} />
+      )}
       {!isBurgerMenuOpen && (
         <main>
           <Outlet />
