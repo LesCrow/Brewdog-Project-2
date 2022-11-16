@@ -14,7 +14,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
   return (
     <div>
-      <div className="bg-navBlue h-50 flex justify-around items-center ">
+      <div className="bg-navBlue h-50 flex justify-between items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
@@ -29,7 +29,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         </Link>
 
         {/* Display search bar */}
-        <div className="flex justify-between  w-20">
+        <div className="flex  w-[15%] mr-10 ">
           <img
             onClick={handleDisplaySearchBar}
             className="h-8 w-8"
@@ -41,7 +41,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
           {/* Shopping cart icon */}
           {!isSearchBarActive && (
             <img
-              className="h-8 w-8 "
+              className="h-8 w-8 ml-5"
               src="src/assets/panier.png"
               alt="icone panier"
             />

@@ -24,7 +24,7 @@ export const navLinks = [
     to: "/brewery",
   },
   {
-    page: "THE SHOP",
-    to: "/shop",
+    page: "CONTACT",
+    to: "/contact",
   },
 ];

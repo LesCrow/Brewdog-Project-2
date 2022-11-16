@@ -8,7 +8,7 @@ function PictoBeerAnimation({ onClick }) {
         onClick={onClick}
         src="src/assets/animation.gif"
         alt="icone menu burger"
-        className="h-14 w-14 "
+        className="h-14 w-14 ml-10"
       />
     </div>
   );
