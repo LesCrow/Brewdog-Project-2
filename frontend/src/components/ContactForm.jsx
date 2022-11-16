@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 const FORM_ENDPOINT = "";
 
 function ContactForm() {
+  const notify = (message) => toast(message);
 
   const ref2 = useRef(null);
 
@@ -119,7 +120,7 @@ function ContactForm() {
           </div>
         </div>
         <div>
-          <h2 className="text-bargreen text-center text-4xl  text-stroke ">
+          <h2 className="text-bargreen text-center text-8xl  text-stroke transform translate-y-[20%] ">
             #BREWDOG FAMILY
           </h2>
         </div>
