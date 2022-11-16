@@ -11,17 +11,17 @@ function Home() {
           {" "}
           <MyCarousel />
         </div>
-        <div className="z-10  mt-[30px] relative w-full">
-          <div className="flex-col sm:flex-row w-full pb-10 pt-0.5 flex ">
-            <div className=" w-full flex justify-center items-center">
+        <div className=" z-10  mt-[30px] relative w-full">
+          <div className=" flex-col  sm:flex-row  w-[100%]  flex ">
+            <div className="  w-full flex justify-center items-center">
               <img
-                className=" flex p-3 object-cover bg-center h-80 md:h-[80%]"
+                className=" flex p-3 object-cover bg-center h-80 md:h-[60%]"
                 src="src/assets/ecureuil-home-page.png"
                 alt="ecureuil"
               />
             </div>
             <div className=" w-full flex ">
-              <p className=" flex text-center text-[14px] md:text-[15px] m-5 md:mt-24 md:mr-9 ">
+              <p className="border m-auto flex h-full  text-center text-[14px] max-w-md md:text-[15px]  md:mt-28 ">
                 The brewery was established in 2007 by Martin Dickie and James
                 Watt. Both twenty-four years old at the time, we rented set up
                 in Fraserburgh, took out some bank loans a little scary, slammed
