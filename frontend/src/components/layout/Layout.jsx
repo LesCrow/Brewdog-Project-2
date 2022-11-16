@@ -24,7 +24,9 @@ function Layout() {
   const ref = useRef();
   useOnClickOutside(ref, () => setIsBurgerMenuOpen(false));
 
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(
+    localStorage.getItem("verified") === "true"
+  );
 
   return (
     <div>
