@@ -1,28 +1,19 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { toast } from "react-toastify";
 
 const FORM_ENDPOINT = "";
 
 function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+
   const ref2 = useRef(null);
 
   const inView2 = useInView(ref2);
 
-  const handleSubmit = () => {
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 100);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    return notify("SEND !");
   };
-
-  if (submitted) {
-    return (
-      <>
-        <div className="text-2xl">Thanks!</div>
-        <div className="text-md">We will contact you soon.</div>
-      </>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-backcolor w-full">
@@ -42,8 +33,6 @@ function ContactForm() {
             className="bg-backgreen border z-50 3px border-black	shadow-md rounded min-w-full sm:min-w-[400px] px-14 pt-20 pb-8 m-10"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
-            method="POST"
-            target="_blank"
           >
             <p className="flex justify-center">LEAVE US A MESSAGE</p>
 
