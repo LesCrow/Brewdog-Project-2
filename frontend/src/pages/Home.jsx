@@ -12,9 +12,7 @@ function Home() {
           <MyCarousel />
         </div>
         <div className=" z-10  mt-[30px] relative w-full">
-          <h2 className="font-anton text-center text-4xl md:text-8xl text-white mt-20 ">
-            BREW DOG
-          </h2>
+          <Title title="BREWDOG" />
           <div className=" flex-col  sm:flex-row  w-[100%]  flex ">
             <div className="  w-full flex justify-center items-center">
               <img
@@ -24,7 +22,7 @@ function Home() {
               />
             </div>
             <div className=" w-full flex ">
-              <p className=" flex h-full  text-center text-[14px] max-w-xl md:text-[20px] sm:mt-5 md:mt-32 xl:mt-60">
+              <p className=" flex h-full  text-center text-[14px] max-w-xl md:text-[24px] sm:mt-5 md:mt-32 xl:mt-60">
                 The brewery was established in 2007 by Martin Dickie and James
                 Watt. Both twenty-four years old at the time, we rented set up
                 in Fraserburgh, took out some bank loans a little scary, slammed
@@ -41,10 +39,10 @@ function Home() {
           <h2 className="font-anton text-center text-4xl md:text-8xl text-white mt-5 ">
             A BEER THAT BREAKS CODE
           </h2>
-          <div className="flex w-full items-center justify-center pt-52 z-0">
+          <div className="flex w-full items-center justify-center pt-72 z-0">
             <motion.div
               transition={{ delay: 0.2, type: "just" }}
-              className="transform -translate-y-16 translate-x-5"
+              className="transform -translate-y-28 translate-x-10"
             >
               <img
                 className="flex h-36 lg:h-96"
@@ -64,7 +62,7 @@ function Home() {
             </motion.div>
             <motion.div
               transition={{ delay: 0.2, type: "just" }}
-              className="transform -translate-y-20 -translate-x-5 z-20"
+              className="transform -translate-y-56 -translate-x-16 z-20"
             >
               <img
                 className="flex h-36 lg:h-96"
