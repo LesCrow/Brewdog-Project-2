@@ -5,7 +5,7 @@ function SearchBar() {
     <div>
       <input
         placeholder="Search a beer"
-        className=" w-10 md:w-[100%] mr-4 h-4 rounded-md ml-2 "
+        className="h- w-16 md:w-[80%] mr-4  rounded-md ml-2 "
       />
     </div>
   );

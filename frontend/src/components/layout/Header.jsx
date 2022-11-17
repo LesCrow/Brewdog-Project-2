@@ -19,7 +19,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   return (
     <div>
       <ShoppingCart />
-      <div className="bg-navBlue h-50 flex justify-around items-center ">
+      <div className="bg-navBlue h-50 flex justify-around items-center ml-[-30px]">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
@@ -30,7 +30,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         </Link>
 
         {/* Display search bar */}
-        <div className="flex justify-around  w-[10%] ">
+        <div className=" flex ">
           <img
             onClick={handleDisplaySearchBar}
             className="h-8 w-8"
