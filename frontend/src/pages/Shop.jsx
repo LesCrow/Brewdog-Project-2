@@ -42,8 +42,8 @@ function Shop() {
     return beer;
   };
   return (
-    <div className="">
-      <div className=" w-full bg-slate-500 flex justify-around items-center h-10 ">
+    <div className="bg-backcolor">
+      <div className=" w-full bg-backpink flex justify-around items-center h-10 mb-4 ">
         <select
           onChange={(e) => setSelectedCheckRadio(e.target.value)}
           className=" w-40 rounded h-6 md:w-60"

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Popup from "./Popup";
@@ -19,7 +20,7 @@ function BeersCards({ beer, isActive }) {
   }
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row border border-black rounded-md p-4">
       <li
         className="relative flex flex-col justify-end items-center"
         onMouseEnter={HandleOverOpacity}
@@ -46,9 +47,11 @@ function BeersCards({ beer, isActive }) {
               isDemo ? "hover:rotate-12 duration-75 h-52 w-16" : "h-52 w-16"
             }
           />
-          <h2 className="hover:underline-offset-auto  ">{beer.name}</h2>
-          <p className="text-bargreen font-semibold underline"> {beer.abv}%</p>
-          <p className="text-backpink font-semibold">{beer.target_fg} JA$</p>
+          <h3 className="hover:underline-offset-auto font-fun text-xl ">
+            {beer.name}
+          </h3>
+          <p className=" text-backpink font-semibold "> {beer.abv}%</p>
+          <p className="text-bargreen font-semibold">{beer.target_fg} JA$</p>
           {isActive && (
             <p className="">
               {beer.food_pairing.map((e) => (
@@ -57,20 +60,20 @@ function BeersCards({ beer, isActive }) {
             </p>
           )}
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-row-reverse justify-center items-center  gap-2">
           <motion.button
             whileHover={{ scale: 1.2 }}
             type="button"
             onClick={() => addToCart(beer)}
-            className="text-sm bg-bargreen rounded-md flex justify-center items-center w-20 mb-2 h-6"
+            className="text-sm bg-bargreen rounded-md flex justify-center items-center   text-white h-full w-1/3"
           >
-            Panier
+            <FaShoppingCart />
           </motion.button>
 
           <motion.button
             whileHover={{ scale: 1.2 }}
             type="button"
-            className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6"
+            className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6 text-white font-semibold"
             onClick={() => setOpenDescription(true)}
           >
             Description
