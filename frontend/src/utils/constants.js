@@ -18,9 +18,9 @@ export const months = [
 export const years = new Array(101).fill(null).map((_, index) => 2022 - index);
 
 export const navLinks = [
-  { page: "THE SHOP", to: "/shop" },
+  { page: "SHOP", to: "/shop" },
   {
-    page: "THE BREWERY",
+    page: "BREWERY",
     to: "/brewery",
   },
   {
