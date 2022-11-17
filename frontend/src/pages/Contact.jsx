@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { toast } from "react-toastify";
+import Title from "../components/global/Title";
 
 const FORM_ENDPOINT = "";
 
@@ -19,23 +20,27 @@ function Contact() {
   return (
     <div className="min-h-screen bg-backcolor w-full">
       <div className="absolute  bg-backcolor left-0 w-full h-full">
-        <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
+        <div className="bg-backpink transform translate-y-0 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">
-        <div className="mb-3 pt-0 ">
-          <h1 className="text-bargreen text-center text-4xl  text-stroke ">
-            CONTACT
-          </h1>
-          <img className="p-24" src="src/assets/dogtop.jpeg" alt="banimage" />
+        <div className=" mt-[-50px]">
+          <Title title="CONTACT" />
+          <img
+            className="mt-5 w-[90%] m-auto"
+            src="src/assets/dogtop.jpeg"
+            alt="banimage"
+          />
         </div>
-        <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
+        <div className="flex justify-center sm:justify-between  flex-row-reverse w-[90%] m-auto">
           <form
             ref={ref2}
             className="bg-backgreen border z-50 3px border-black	shadow-md rounded min-w-full sm:min-w-[400px] px-14 pt-20 pb-8 m-10"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
           >
-            <p className="flex justify-center">LEAVE US A MESSAGE</p>
+            <h2 className="font-anton text-center text-4xl md:text-8xl text-white mt-[-30px] ">
+              LEAVE US A MESSAGE
+            </h2>
 
             <div className="mb-3 pt-5 my-8">
               <input
@@ -120,7 +125,7 @@ function Contact() {
           </div>
         </div>
         <div>
-          <h2 className="text-bargreen text-center text-8xl  text-stroke transform translate-y-[20%] ">
+          <h2 className="text-bargreen text-center text-4xl  text-stroke transform translate-y-[20%] ">
             #BREWDOG FAMILY
           </h2>
         </div>
