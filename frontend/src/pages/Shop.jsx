@@ -34,6 +34,7 @@ function Shop() {
     }
     return beer;
   };
+
   return (
     <div className="bg-backcolor">
       <div className=" w-full bg-backpink flex justify-around items-center h-10 mb-4 ">
