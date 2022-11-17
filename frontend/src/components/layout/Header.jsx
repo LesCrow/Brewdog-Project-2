@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { RiShoppingCartLine } from "react-icons/ri";
+
 import Logo from "../global/Logo";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";
@@ -44,15 +46,10 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
           {/* Shopping cart icon */}
           {!isSearchBarActive && (
-            <div>
-              <img
-                className="h-8 w-8 ml-5"
-                src="src/assets/panier.png"
-                alt="icone panier"
-                onClick={showHideCart}
-              />
+            <div className=" flex flex-col justify-center items-center">
+              <RiShoppingCartLine onClick={showHideCart} className="h-9 w-9 " />
               {cartItems.length > 0 && (
-                <div>
+                <div className="fixed z-10 ml-1 mb-10">
                   <span>{cartItems.length}</span>
                 </div>
               )}

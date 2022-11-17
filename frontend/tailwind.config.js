@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         anton: ["Anton", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        fun: ["sono", "sans-serif"],
       },
       colors: {
         navBlue: {
