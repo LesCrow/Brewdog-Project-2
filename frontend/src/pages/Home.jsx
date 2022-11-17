@@ -42,7 +42,8 @@ function Home() {
           <div className="flex w-full items-center justify-center pt-72 z-0">
             <motion.div
               transition={{ delay: 0.2, type: "just" }}
-              className="transform -translate-y-28 translate-x-10"
+              className="transform -translate-y-44
+              translate-x-6 md:-translate-y-48 md:translate-x-16"
             >
               <img
                 className="flex h-36 lg:h-96"
@@ -52,7 +53,8 @@ function Home() {
             </motion.div>
             <motion.div
               transition={{ delay: 0.2, type: "just" }}
-              className="z-10"
+              className="z-10 transform -translate-y-28
+              translate-x-0 md:-translate-y-0 md:translate-x-0"
             >
               <img
                 className="flex h-36 lg:h-96"
@@ -62,7 +64,8 @@ function Home() {
             </motion.div>
             <motion.div
               transition={{ delay: 0.2, type: "just" }}
-              className="transform -translate-y-56 -translate-x-16 z-20"
+              className="transform -translate-y-56
+              translate-x-[-20px]  md:-translate-y-56 md:-translate-x-16 z-20"
             >
               <img
                 className="flex h-36 lg:h-96"

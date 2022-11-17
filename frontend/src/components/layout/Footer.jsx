@@ -14,7 +14,7 @@ function Footer() {
         <Logo />
       </Link>
       <NewsletterInput />
-      <div className="flex w-1/2 justify-between font-anton text-white text-2xl text-stroke mt-8">
+      <div className="flex w-full md:w-1/2 justify-between font-anton text-white text-2xl text-stroke mt-8">
         {navLinks.map((link) => (
           <Link to={link.to}>{link.page}</Link>
         ))}
