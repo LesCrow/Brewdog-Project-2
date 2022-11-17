@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const FORM_ENDPOINT = "";
 
-function ContactForm() {
+function Contact() {
   const notify = (message) => toast(message);
 
   const ref2 = useRef(null);
@@ -129,4 +129,4 @@ function ContactForm() {
   );
 }
 
-export default ContactForm;
+export default Contact;
