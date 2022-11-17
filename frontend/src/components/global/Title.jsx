@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 function Title({ title }) {
   return (
-    <div>
-      <h1 className=" font-anton w-full text-center text-5xl  text-bargreen text-stroke ">
+    <div className=" flex justify-center">
+      <h1 className=" font-anton   text-center text-6xl md:text-9xl text-bargreen text-stroke ">
         {title}{" "}
       </h1>
     </div>
