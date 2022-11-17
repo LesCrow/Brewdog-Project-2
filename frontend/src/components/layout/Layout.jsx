@@ -29,7 +29,7 @@ function Layout() {
   );
 
   return (
-    <div className="font-roboto">
+    <div>
       {!isVerified && <Age setIsVerified={setIsVerified} />}
       <ToastContainer />
       <Header
