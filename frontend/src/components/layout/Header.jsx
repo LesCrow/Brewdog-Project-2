@@ -19,7 +19,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   return (
     <div>
       <ShoppingCart />
-      <div className="bg-navBlue h-52 flex justify-around items-center ml-[-30px]">
+      <div className="bg-navBlue h-40 md:h-52 flex justify-around items-center ml-[-30px]">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
