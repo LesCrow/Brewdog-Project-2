@@ -18,7 +18,10 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
   return (
     <div>
-      <ShoppingCart />
+      <div className="flex flex-col justify-center items-center ">
+        <ShoppingCart />
+      </div>
+
       <div className="bg-navBlue h-50 flex justify-around items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
