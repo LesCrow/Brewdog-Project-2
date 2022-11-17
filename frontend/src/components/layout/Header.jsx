@@ -30,7 +30,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         </Link>
 
         {/* Display search bar */}
-        <div className=" flex ">
+        <div className=" flex items-center">
           <img
             onClick={handleDisplaySearchBar}
             className="h-8 w-8 md:h-14 md:w-14"

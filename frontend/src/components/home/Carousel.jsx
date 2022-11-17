@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 export default function MyCarousel() {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex  md:w-1/2 md:flex lg:felx lg:1/3 ">
+      <div className="flex  md:w-2/5  lg:w- ">
         <Carousel
           infiniteLoop
           autoPlay
