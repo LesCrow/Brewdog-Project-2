@@ -30,7 +30,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         </Link>
 
         {/* Display search bar */}
-        <div className="flex justify-between  w-20">
+        <div className="flex justify-around  w-[10%] ">
           <img
             onClick={handleDisplaySearchBar}
             className="h-8 w-8"
