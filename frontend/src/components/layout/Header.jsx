@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Logo from "../global/Logo";
 import SearchBar from "../header/SearchBar";
@@ -24,7 +25,9 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
         {/* Logo */}
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
 
         {/* Display search bar */}
         <div className="flex justify-between  w-20">
