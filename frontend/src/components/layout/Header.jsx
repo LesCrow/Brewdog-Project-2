@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";
 import PictoBeerAnimation from "../header/PictoBeerAnimation";
+import CartContext from "../../context/Cart/CartContext";
+import ShoppingCart from "../shop/ShoppingCart";
 
 function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
+  const { cartItems, showHideCart } = useContext(CartContext);
   // Display search bar
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
   function handleDisplaySearchBar() {
@@ -14,6 +17,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
   return (
     <div>
+      <ShoppingCart />
       <div className="bg-navBlue h-50 flex justify-between items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
@@ -40,11 +44,19 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
           {/* Shopping cart icon */}
           {!isSearchBarActive && (
-            <img
-              className="h-8 w-8 ml-5"
-              src="src/assets/panier.png"
-              alt="icone panier"
-            />
+            <div>
+              <img
+                className="h-8 w-8 ml-5"
+                src="src/assets/panier.png"
+                alt="icone panier"
+                onClick={showHideCart}
+              />
+              {cartItems.length > 0 && (
+                <div>
+                  <span>{cartItems.length}</span>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Popup from "./Popup";
+import CartContext from "../../context/Cart/CartContext";
 
 function BeersCards({ beer, isActive }) {
+  const { addToCart } = useContext(CartContext);
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
   const [openDescription, setOpenDescription] = useState(false);
@@ -59,6 +61,7 @@ function BeersCards({ beer, isActive }) {
           <motion.button
             whileHover={{ scale: 1.2 }}
             type="button"
+            onClick={() => addToCart(beer)}
             className="text-sm bg-bargreen rounded-md flex justify-center items-center w-20 mb-2 h-6"
           >
             Panier
