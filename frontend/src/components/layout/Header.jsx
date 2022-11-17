@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { HiMagnifyingGlass } from "react-icons/hi2";
 
 import Logo from "../global/Logo";
 import SearchBar from "../header/SearchBar";
@@ -36,12 +37,11 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
         {/* Display search bar */}
         <div className="flex justify-between  w-20">
-          <img
+          <HiMagnifyingGlass
             onClick={handleDisplaySearchBar}
-            className="h-8 w-8"
-            src="src/assets/loupe.png"
-            alt="icone loupe"
+            className="h-9 w-9"
           />
+
           {isSearchBarActive && <SearchBar />}
 
           {/* Shopping cart icon */}
