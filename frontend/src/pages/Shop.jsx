@@ -1,14 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { typeBoxes } from "../utils/constants";
 import BeersCards from "../components/shop/BeersCards";
-
-const typeBoxes = [
-  "Trier par : ",
-  "% alcool croissant",
-  "% alcool decroissant",
-  "prix croissant",
-  "prix decroissant",
-];
 
 function Shop() {
   const [selectedCheckRadio, setSelectedCheckRadio] = useState();
@@ -27,16 +20,16 @@ function Shop() {
   };
 
   const handleSorting = (beer) => {
-    if (selectedCheckRadio === "% alcool croissant") {
+    if (selectedCheckRadio === "% alcohol (ascending)") {
       return beer.sort((a, b) => a.abv - b.abv);
     }
-    if (selectedCheckRadio === "% alcool decroissant") {
+    if (selectedCheckRadio === "% alcohol (descending)") {
       return beer.sort((a, b) => b.abv - a.abv);
     }
-    if (selectedCheckRadio === "prix croissant") {
+    if (selectedCheckRadio === "price (ascending)") {
       return beer.sort((a, b) => a.target_fg - b.target_fg);
     }
-    if (selectedCheckRadio === "prix decroissant") {
+    if (selectedCheckRadio === "price (descending)") {
       return beer.sort((a, b) => b.target_fg - a.target_fg);
     }
     return beer;
@@ -58,7 +51,7 @@ function Shop() {
         </select>
         <input
           type="text"
-          placeholder=" 🔍 FoodPairing with ..."
+          placeholder=" 🔍 Food pairing with ..."
           className="w-40 rounded h-6 md:w-60"
           maxLength="50"
           onChange={(e) => setFoodPairing(e.target.value)}
