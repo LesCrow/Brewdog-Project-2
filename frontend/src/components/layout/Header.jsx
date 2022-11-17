@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Logo from "../global/Logo";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";
 import PictoBeerAnimation from "../header/PictoBeerAnimation";
@@ -18,22 +18,16 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   return (
     <div>
       <ShoppingCart />
-      <div className="bg-navBlue h-50 flex justify-between items-center ">
+      <div className="bg-navBlue h-50 flex justify-around items-center ">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
         )}
         {/* Logo */}
-        <Link to="/">
-          <img
-            className="h-28 w-24 mt-6 mb-6 ml-4"
-            src="src/assets/logo_brewdog.png"
-            alt="brewdog logo"
-          />
-        </Link>
+        <Logo />
 
         {/* Display search bar */}
-        <div className="flex  w-[15%] mr-10 ">
+        <div className="flex justify-between  w-20">
           <img
             onClick={handleDisplaySearchBar}
             className="h-8 w-8"

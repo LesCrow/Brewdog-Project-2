@@ -1,9 +1,10 @@
-import { useReducer } from "react";
+import { useMemo, useReducer } from "react";
+import PropTypes from "prop-types";
 import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
 import { SHOW_HIDE_CART, REMOVE_ITEM, ADD_TO_CART } from "../Type";
 
-function CartState({ children }) {
+function CartContextProvider({ children }) {
   const initalState = {
     showCart: false,
     cartItems: [],
@@ -23,19 +24,24 @@ function CartState({ children }) {
     dispatch({ type: REMOVE_ITEM, payload: id });
   };
 
+  const context = useMemo(
+    () => ({
+      showCart: state.showCart,
+      cartItems: state.cartItems,
+      addToCart,
+      showHideCart,
+      removeItem,
+    }),
+    [state]
+  );
+
   return (
-    <CartContext.Provider
-      value={{
-        showCart: state.showCart,
-        cartItems: state.cartItems,
-        addToCart,
-        showHideCart,
-        removeItem,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
+    <CartContext.Provider value={context}>{children}</CartContext.Provider>
   );
 }
 
-export default CartState;
+CartContextProvider.propTypes = {
+  children: PropTypes.string.isRequired,
+};
+
+export default CartContextProvider;
