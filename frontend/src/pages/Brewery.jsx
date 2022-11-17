@@ -19,14 +19,18 @@ function Brewery() {
             OUR BREWERY IN ELLON
           </h2>
 
-          <h3 className=" text-right text-2xl pt-12 pb-5">INGREDIENTS</h3>
-          <p className="text-right text-[16px]">
-            It only takes 4 ingredients to brew beer, but what we make with
-            these ingredients is what makes it special. The finest malted
-            barley, high quality hops, water from purified Scottish source and
-            our own in-house yeast strains come together in harmony to create
-            beer for all.
-          </p>
+          <h3 className=" text-right text-2xl md:text-4xl pt-12 pb-5">
+            INGREDIENTS
+          </h3>
+          <div className="flex justify-end">
+            <p className="text-right text-[16px] md:text-xl w-2/3">
+              It only takes 4 ingredients to brew beer, but what we make with
+              these ingredients is what makes it special. The finest malted
+              barley, high quality hops, water from purified Scottish source and
+              our own in-house yeast strains come together in harmony to create
+              beer for all.
+            </p>
+          </div>
         </div>
         <img
           className=" p-3 object-cover bg-center w-full h-40"
@@ -34,14 +38,16 @@ function Brewery() {
           alt="technique"
         />
         <div className="w-full p-10">
-          <h3 className="text-center text-2xl font-normal hover:font-bold pb-5">
+          <h3 className="text-center text-2xl md:text-4xl font-normal  pb-5">
             GOOD BEER THAT FEELS GOOD
           </h3>
-          <p className="text-center text-[16px]">
-            Exceptional quality is the cornerstone of our brewery. All BrewDog
-            beers are brewed from barley top quality malt and hops from the best
-            producers around the world.
-          </p>
+          <div className="flex justify-center">
+            <p className="text-center text-[16px] md:text-xl w-2/3">
+              Exceptional quality is the cornerstone of our brewery. All BrewDog
+              beers are brewed from barley top quality malt and hops from the
+              best producers around the world.
+            </p>
+          </div>
         </div>
         <img
           className="p-3 object-cover bg-center w-full h-40"
@@ -49,11 +55,11 @@ function Brewery() {
           alt="beer"
         />
         <div className="w-full p-10">
-          <h3 className="text-left text-2xl font-normal hover:font-bold pb-5">
+          <h3 className="text-left md:text-4xl text-2xl font-normal pb-5">
             BREWING TECHNIQUE
           </h3>
 
-          <p className="text-left text-[16px]">
+          <p className="text-left text-[16px] md:text-xl w-2/3">
             Our state-of-the-art Aberdeenshire brewery is the kingdom of steel
             and dreams. We have 3 brewing sites and a innovation pilot kit. We
             also use wind power to make our beer, as well as brewing by-products
