@@ -1,7 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaShoppingCart } from "react-icons/fa";
+
 import PropTypes from "prop-types";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
+import CartContext from "../../context/Cart/CartContext";
 
 const dropIn = {
   hidden: { opacity: 0 },
@@ -19,6 +22,7 @@ const dropIn = {
 
 function Popup({ beer, open, onClose }) {
   const ref = useRef();
+  const { addToCart } = useContext(CartContext);
 
   useOnClickOutside(ref, () => onClose());
 
@@ -65,9 +69,10 @@ function Popup({ beer, open, onClose }) {
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 type="button"
-                className="text-sm bg-bargreen rounded-md   w-20 mb-2 h-6 "
+                onClick={() => addToCart(beer)}
+                className="text-sm bg-bargreen rounded-md flex justify-center items-center   text-white h-full w-1/4"
               >
-                Panier
+                Add to <FaShoppingCart />
               </motion.button>
             </div>
           </div>
