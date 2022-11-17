@@ -9,7 +9,7 @@ function NetworkLinks() {
         rel="noreferrer"
       >
         <img
-          className="w-5"
+          className="w-10"
           src=" src/assets/instagram_2.png"
           alt="instagram"
         />
@@ -19,14 +19,18 @@ function NetworkLinks() {
         target="_blank"
         rel="noreferrer"
       >
-        <img className="w-5" src="src/assets/facebook_1.png" alt="facebook" />
+        <img className="w-10" src="src/assets/facebook_1.png" alt="facebook" />
       </a>
       <a
         href=" https://www.youtube.com/user/BrewDogBeer"
         target="_blank"
         rel="noreferrer"
       >
-        <img className="w-5" src="src/assets/youtube_1 (1).png" alt="youtube" />
+        <img
+          className="w-10"
+          src="src/assets/youtube_1 (1).png"
+          alt="youtube"
+        />
       </a>
     </div>
   );
