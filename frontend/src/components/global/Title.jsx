@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Title({ title }) {
+function Title({ title, className }) {
   return (
-    <div className=" flex justify-center">
-      <h1 className=" font-anton   text-center text-6xl md:text-9xl text-bargreen text-stroke ">
+    <div className="flex justify-center">
+      <h1
+        className={`font-anton text-center text-6xl md:text-9xl text-bargreen text-stroke ${className}`}
+      >
         {title}{" "}
       </h1>
     </div>
@@ -13,6 +15,7 @@ function Title({ title }) {
 
 Title.propTypes = {
   title: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Title;
