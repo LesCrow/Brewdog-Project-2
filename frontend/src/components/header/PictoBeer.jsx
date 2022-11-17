@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function PictoBeer({ onClick, display }) {
   return (
-    <div className="h-14 w-14 ml-10">
+    <div className="h-14 w-14 md:h-20 md:w-20 ml-10">
       <img
         onClick={onClick}
         src="src/assets/chopeBiereAnimation1.png"

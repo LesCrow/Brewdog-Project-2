@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { toast } from "react-toastify";
+import Title from "../components/global/Title";
 
 const FORM_ENDPOINT = "";
 
-function ContactForm() {
+function Contact() {
   const notify = (message) => toast(message);
 
   const ref2 = useRef(null);
@@ -17,25 +18,29 @@ function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-backcolor w-full">
+    <div className="min-h-screen bg-backcolor w-full ">
       <div className="absolute  bg-backcolor left-0 w-full h-full">
-        <div className="bg-backpink transform translate-y-56 sm:translate-y-56 md:translate-y-1 lg:translate-y-1 w-full h-full" />
+        <div className="bg-backpink transform translate-y-0 sm:translate-y-56 md:translate-y-1 lg:translate-y-0 w-full h-full" />
       </div>
       <div className="z-10 pt-20 relative w-full ">
-        <div className="mb-3 pt-0 ">
-          <h1 className="text-bargreen text-center text-4xl  text-stroke ">
-            CONTACT
-          </h1>
-          <img className="p-24" src="src/assets/dogtop.jpeg" alt="banimage" />
+        <div className=" mt-[-50px]">
+          <Title title="CONTACT" />
+          <img
+            className="mt-5 w-[90%] m-auto"
+            src="src/assets/dogtop.jpeg"
+            alt="banimage"
+          />
         </div>
-        <div className="flex justify-center sm:justify-between w-full flex-row-reverse">
+        <div className=" flex justify-center sm:justify-between  flex-row-reverse w-[90%] m-auto md:w-full mt-16">
           <form
             ref={ref2}
-            className="bg-backgreen border z-50 3px border-black	shadow-md rounded min-w-full sm:min-w-[400px] px-14 pt-20 pb-8 m-10"
+            className="bg-backgreen border z-50 3px border-black	shadow-md rounded  px-14 pt-20 pb-8 m-10 md:w-[40%]"
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
           >
-            <p className="flex justify-center">LEAVE US A MESSAGE</p>
+            <h2 className="font-anton text-center text-4xl md:text-8xl text-white mt-[-30px]  ">
+              LEAVE US A MESSAGE
+            </h2>
 
             <div className="mb-3 pt-5 my-8">
               <input
@@ -73,21 +78,21 @@ function ContactForm() {
                 required
               />
             </div>
-            <div className="mb-3 pt-10 flex justify-end">
+            <div className="mb-3 pt-10 flex justify-end ">
               <motion.button
                 whileHover={{ scale: 1.2 }}
-                className=" bg-black text-white active:bg-blue-600 font-bold uppercase text-sm px-2 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className=" bg-bargreen text-white active:bg-blue-600 font-bold w-36 uppercase text-xl px-2 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="submit"
               >
                 Send
               </motion.button>
             </div>
           </form>
-          <div className="relative hidden sm:flex md:flex lg:flex  flex-col">
+          <div className=" relative hidden sm:flex md:flex lg:flex  flex-col">
             <motion.div
               style={{
                 transform: inView2
-                  ? "translateX(100px)"
+                  ? "translateX(150px)"
                   : "translateX(-1000px)",
                 opacity: inView2 ? 1 : 0,
                 transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
@@ -95,17 +100,17 @@ function ContactForm() {
               className="text-start relative flex my-10 justify-start w-96 "
             >
               <img
-                className="text-xs objet-cover h-full w-full"
+                className="objet-cover h-full w-full"
                 src="src/assets/space.jpeg"
                 alt="spaceimage"
               />
-              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5" />
+              <div className="w-full h-full absolute bg-white bg-opacity-20 bottom-10 left-10" />
             </motion.div>
             <motion.div
               style={{
-                transform: inView2 ? "translateX(500px)" : "translateX(1000px)",
+                transform: inView2 ? "translateX(450px)" : "translateX(1000px)",
                 opacity: inView2 ? 1 : 0,
-                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s",
               }}
               transition={{ delay: 3 }}
               className="text-start flex my-10 relative justify-start  w-96"
@@ -115,12 +120,12 @@ function ContactForm() {
                 src="src/assets/concert.jpeg"
                 alt="concertimage"
               />
-              <div className="w-full h-full absolute bg-white bg-opacity-30 bottom-5 left-5" />
+              <div className="w-full h-full absolute bg-backpink bg-opacity-30 bottom-10 left-10" />
             </motion.div>
           </div>
         </div>
         <div>
-          <h2 className="text-bargreen text-center text-8xl  text-stroke transform translate-y-[20%] ">
+          <h2 className="text-bargreen text-center text-4xl  text-stroke transform translate-y-[20%] md:text-9xl ">
             #BREWDOG FAMILY
           </h2>
         </div>
@@ -129,4 +134,4 @@ function ContactForm() {
   );
 }
 
-export default ContactForm;
+export default Contact;

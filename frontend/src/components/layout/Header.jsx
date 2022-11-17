@@ -25,7 +25,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         <ShoppingCart />
       </div>
 
-      <div className="bg-navBlue h-50 flex justify-around items-center ">
+      <div className="bg-navBlue h-40 md:h-52 flex justify-around items-center ml-[-30px]">
         {!isBurgerMenuOpen && <PictoBeer onClick={handleDisplayBurger} />}
         {isBurgerMenuOpen && (
           <PictoBeerAnimation onClick={handleDisplayBurger} />
@@ -36,10 +36,12 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         </Link>
 
         {/* Display search bar */}
-        <div className="flex justify-between  w-20">
+        <div className=" flex items-center">
           <HiMagnifyingGlass
             onClick={handleDisplaySearchBar}
-            className="h-9 w-9"
+            className="h-8 w-8 md:h-14 md:w-14"
+            src="src/assets/loupe.png"
+            alt="icone loupe"
           />
 
           {isSearchBarActive && <SearchBar />}
@@ -47,7 +49,10 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
           {/* Shopping cart icon */}
           {!isSearchBarActive && (
             <div className=" flex flex-col justify-center items-center">
-              <RiShoppingCartLine onClick={showHideCart} className="h-9 w-9 " />
+              <RiShoppingCartLine
+                onClick={showHideCart}
+                className="h-9 w-9 md:h-14 md:w-14"
+              />
               {cartItems.length > 0 && (
                 <div className="fixed z-10 ml-1 mb-10">
                   <span>{cartItems.length}</span>

@@ -4,8 +4,15 @@ import { Carousel } from "react-responsive-carousel";
 export default function MyCarousel() {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex  md:w-1/2 md:flex lg:felx lg:1/3 ">
-        <Carousel infiniteLoop showThumbs={false} autoPlay>
+      <div className="flex  md:w-2/5  lg:w- ">
+        <Carousel
+          infiniteLoop
+          autoPlay
+          interval={2000}
+          showThumbs={false}
+          showArrows={false}
+          showStatus={false}
+        >
           <div>
             <img alt="" src="src/assets/gluten-free_punk_-_1050x1050_1_1.png" />
           </div>

@@ -6,16 +6,19 @@ import { navLinks } from "../../utils/constants";
 
 function MenuLinks({ isBurgerMenuOpen }) {
   return (
-    <div className="w-full h-screen  flex flex-col justify-around items-center text-white text-3xl">
+    <div className="md:ml-28 w-full h-screen  flex flex-col justify-around items-center text-white text-3xl">
       {navLinks.map((link, index) => (
         <motion.li
-          style={{ fontSize: `${30 + index * 10}px` }}
+          style={{ fontSize: `${70 + index * 20}px` }}
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{ delay: 0.1, type: "spring" }}
           onClick={!isBurgerMenuOpen}
+          className="mt-[-200px]"
         >
-          <Link to={link.to}>{link.page}</Link>
+          <Link className="font-anton text-stroke" to={link.to}>
+            {link.page}
+          </Link>
         </motion.li>
       ))}
     </div>
