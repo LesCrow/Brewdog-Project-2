@@ -19,6 +19,10 @@ function BeersCards({ beer, isActive }) {
     setIsOpacity((j) => !j);
   }
 
+  const moneyConverterJmdToEur = (number) => {
+    return number * 0.006;
+  };
+
   return (
     <div className="flex flex-row border border-black rounded-md p-4">
       <li
@@ -51,7 +55,9 @@ function BeersCards({ beer, isActive }) {
             {beer.name}
           </h3>
           <p className=" text-backpink font-semibold "> {beer.abv}%</p>
-          <p className="text-bargreen font-semibold">{beer.target_fg} JA$</p>
+          <p className="text-bargreen font-semibold">
+            {moneyConverterJmdToEur(beer.target_fg).toFixed(2)} €
+          </p>
           {isActive && (
             <p className="">
               {beer.food_pairing.map((e) => (
