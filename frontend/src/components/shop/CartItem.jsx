@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-
 import CartContext from "../../context/Cart/CartContext";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 
 function CartItem({ item }) {
   const { removeItem } = useContext(CartContext);
@@ -15,7 +15,7 @@ function CartItem({ item }) {
         />
       </th>
       <th>{item.name}</th>
-      <th> {item.target_fg}$</th>
+      <th> {moneyConverterJmdToEur(item.target_fg).toFixed(2)}€</th>
       <th>
         <button
           onClick={() => removeItem(item.id)}

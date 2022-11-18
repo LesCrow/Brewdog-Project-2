@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Popup from "./Popup";
 import CartContext from "../../context/Cart/CartContext";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 
 function BeersCards({ beer, isActive }) {
   const { addToCart } = useContext(CartContext);
@@ -18,10 +19,6 @@ function BeersCards({ beer, isActive }) {
   function HandleOverOpacity() {
     setIsOpacity((j) => !j);
   }
-
-  const moneyConverterJmdToEur = (number) => {
-    return number * 0.006;
-  };
 
   return (
     <div className="flex flex-row border border-black rounded-md p-4">
