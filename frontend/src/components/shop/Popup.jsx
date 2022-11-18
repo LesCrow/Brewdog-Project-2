@@ -37,12 +37,12 @@ function Popup({ beer, open, onClose }) {
           className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"
         >
           <div
-            className="w-[600px] flex flex-col bg-white bg-opacity-70
+            className="w-[600px] flex flex-col bg-white bg-opacity-90
             rounded-lg"
             ref={ref}
           >
             <button
-              className="text-white text-xl font-extrabold flex justify-end mr-4 mt-2 "
+              className="text-xl font-extrabold flex justify-end mr-4 mt-2 "
               type="button"
               onClick={onClose}
             >
