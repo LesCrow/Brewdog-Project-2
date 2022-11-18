@@ -1,8 +1,8 @@
 import React, { useRef, useContext } from "react";
+import PropTypes from "prop-types";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaShoppingCart } from "react-icons/fa";
-
-import PropTypes from "prop-types";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import CartContext from "../../context/Cart/CartContext";
 
@@ -54,17 +54,14 @@ function Popup({ beer, open, onClose }) {
                 src={beer.image_url}
                 alt="Une biere"
               />
-              <h2 className="">{beer.name}</h2>
+              <p className="font-fun ">{beer.name}</p>
 
               <h1>{beer.description}</h1>
             </div>
             <div className="flex flex-row justify-around">
-              <p className="text-bargreen font-semibold underline ">
-                {" "}
-                {beer.abv}%
-              </p>
-              <p className="text-backpink font-semibold ">
-                {beer.target_fg} JA$
+              <p className=" text-backpink font-semibold  "> {beer.abv}%</p>
+              <p className=" text-bargreen font-semibold ">
+                {moneyConverterJmdToEur(beer.target_fg).toFixed(2)} €
               </p>
               <motion.button
                 whileHover={{ scale: 1.2 }}
