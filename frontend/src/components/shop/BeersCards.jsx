@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Popup from "./Popup";
 import CartContext from "../../context/Cart/CartContext";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 
 function BeersCards({ beer }) {
   const { addToCart } = useContext(CartContext);
@@ -51,7 +52,9 @@ function BeersCards({ beer }) {
             {beer.name}
           </h3>
           <p className=" text-backpink font-semibold "> {beer.abv}%</p>
-          <p className="text-bargreen font-semibold">{beer.target_fg} JA$</p>
+          <p className="text-bargreen font-semibold">
+            {moneyConverterJmdToEur(beer.target_fg).toFixed(2)} €
+          </p>
         </div>
         <div className="flex flex-row-reverse justify-center items-center  gap-2">
           <motion.button

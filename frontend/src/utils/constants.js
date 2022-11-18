@@ -28,3 +28,15 @@ export const navLinks = [
     to: "/contact",
   },
 ];
+
+export const typeBoxes = [
+  "Sort by : ",
+  "% alcohol (ascending)",
+  "% alcohol (descending)",
+  "price (ascending)",
+  "price (descending)",
+];
+
+export const moneyConverterJmdToEur = (number) => {
+  return number * 0.006;
+};
