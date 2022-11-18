@@ -48,13 +48,13 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
           {/* Shopping cart icon */}
           {!isSearchBarActive && (
-            <div className=" flex flex-col justify-center items-center">
+            <div className=" flex flex-row justify-center items-center">
               <RiShoppingCartLine
                 onClick={showHideCart}
-                className="h-9 w-9 md:h-14 md:w-14"
+                className="h-9 w-9  md:h-14 md:w-14"
               />
               {cartItems.length > 0 && (
-                <div className="fixed z-10 ml-1 mb-10">
+                <div className=" z-10 ml-1 bg-backcolor rounded-full h-6 w-6 flex justify-center font-fun">
                   <span>{cartItems.length}</span>
                 </div>
               )}

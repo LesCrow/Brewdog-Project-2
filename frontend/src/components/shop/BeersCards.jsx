@@ -6,7 +6,7 @@ import Popup from "./Popup";
 import CartContext from "../../context/Cart/CartContext";
 import { moneyConverterJmdToEur } from "../../utils/constants";
 
-function BeersCards({ beer, isActive }) {
+function BeersCards({ beer }) {
   const { addToCart } = useContext(CartContext);
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
@@ -55,13 +55,6 @@ function BeersCards({ beer, isActive }) {
           <p className="text-bargreen font-semibold">
             {moneyConverterJmdToEur(beer.target_fg).toFixed(2)} €
           </p>
-          {isActive && (
-            <p className="">
-              {beer.food_pairing.map((e) => (
-                <li className="">{e}.</li>
-              ))}
-            </p>
-          )}
         </div>
         <div className="flex flex-row-reverse justify-center items-center  gap-2">
           <motion.button
@@ -94,7 +87,6 @@ function BeersCards({ beer, isActive }) {
 
 BeersCards.propTypes = {
   beer: PropTypes.objectOf().isRequired,
-  isActive: PropTypes.func.isRequired,
 };
 
 export default BeersCards;
