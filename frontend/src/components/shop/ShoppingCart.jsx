@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CartContext from "../../context/Cart/CartContext";
 import CartItem from "./CartItem";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 
 function ShoppingCart() {
   const { showCart, cartItems, showHideCart } = useContext(CartContext);
@@ -40,11 +41,14 @@ function ShoppingCart() {
                   <div className="flex justify-end pt-10  ">
                     <div className="bg-backpink rounded-lg h-10 w-36 flex justify-center items-center">
                       Cart Total :{" "}
-                      {cartItems.reduce(
-                        (amount, item) => item.target_fg + amount,
-                        0
-                      )}
-                      $
+                      {cartItems
+                        .reduce(
+                          (amount, item) =>
+                            moneyConverterJmdToEur(item.target_fg) + amount,
+                          0
+                        )
+                        .toFixed(2)}
+                      €
                     </div>
                   </div>
                 </div>

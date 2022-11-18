@@ -36,3 +36,7 @@ export const typeBoxes = [
   "price (ascending)",
   "price (descending)",
 ];
+
+export const moneyConverterJmdToEur = (number) => {
+  return number * 0.006;
+};
