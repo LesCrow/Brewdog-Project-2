@@ -62,7 +62,7 @@ function Shop() {
           className="w-40 rounded h-6 md:w-60"
           maxLength="50"
           onChange={(e) => setFoodPairing(e.target.value)}
-          onClick={setIsActive}
+          onClick={() => setIsActive(!isActive)}
         />
       </div>
       <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 ">
