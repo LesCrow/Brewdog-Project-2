@@ -36,8 +36,8 @@ function Shop() {
   };
 
   return (
-    <div className="bg-backcolor">
-      <div className=" w-full bg-backpink flex justify-around items-center h-10 mb-4 ">
+    <div className="bg-backcolor pb-2">
+      <div className=" w-full bg-backpink flex justify-around items-center h-10  ">
         <select
           onChange={(e) => setSelectedCheckRadio(e.target.value)}
           className=" w-40 rounded h-6 md:w-60"
@@ -59,7 +59,7 @@ function Shop() {
           onClick={() => setIsActive(!isActive)}
         />
       </div>
-      <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 ">
+      <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 my-4">
         {dataBeer.length &&
           handleSorting(dataBeer)
             .filter(

@@ -6,7 +6,7 @@ import { moneyConverterJmdToEur } from "../../utils/constants";
 function CartItem({ item }) {
   const { removeItem } = useContext(CartContext);
   return (
-    <tr className=" border-b-4 border-black">
+    <tr className=" border-b-2 border-bargreen ">
       <th className="">
         <img
           src={item.image_url}
@@ -14,7 +14,7 @@ function CartItem({ item }) {
           className="w-8 h-28 mx-4 my-4 "
         />
       </th>
-      <th>{item.name}</th>
+      <th className="font-fun">{item.name}</th>
       <th> {moneyConverterJmdToEur(item.target_fg).toFixed(2)}€</th>
       <th>
         <button

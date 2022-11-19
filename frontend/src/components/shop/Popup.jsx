@@ -5,6 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import PropTypes from "prop-types";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import CartContext from "../../context/Cart/CartContext";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 
 const dropIn = {
   hidden: { opacity: 0 },
@@ -37,7 +38,7 @@ function Popup({ beer, open, onClose }) {
           className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"
         >
           <div
-            className="w-[600px] flex flex-col bg-white bg-opacity-90
+            className="w-3/4 h-5/6 flex flex-col bg-white bg-opacity-90 overflow-y-auto p-2
             rounded-lg"
             ref={ref}
           >
@@ -54,17 +55,24 @@ function Popup({ beer, open, onClose }) {
                 src={beer.image_url}
                 alt="Une biere"
               />
-              <h2 className="">{beer.name}</h2>
+              <h2 className="font-fun mb-1 ">{beer.name}</h2>
+              <h1 className="bg-bargreen rounded-md w-full p-2 bg-opacity-90 mb-1">
+                {beer.description}
+              </h1>
 
-              <h1>{beer.description}</h1>
+              <div className="bg-backpink rounded-md w-full bg-opacity-90 p-2">
+                <h3 className="font-bold">Good combinaison with : </h3>
+                <li>
+                  {beer.food_pairing.map((food) => (
+                    <ul key={food.name}>{food}.</ul>
+                  ))}
+                </li>
+              </div>
             </div>
-            <div className="flex flex-row justify-around">
-              <p className="text-bargreen font-semibold underline ">
-                {" "}
-                {beer.abv}%
-              </p>
+            <div className="flex flex-row justify-around w-full">
+              <p className="text-bargreen font-semibold  "> {beer.abv} %</p>
               <p className="text-backpink font-semibold ">
-                {beer.target_fg} JA$
+                {moneyConverterJmdToEur(beer.target_fg).toFixed(2)} €
               </p>
               <motion.button
                 whileHover={{ scale: 1.2 }}
