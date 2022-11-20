@@ -1,3 +1,12 @@
+/* Titles font */
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+/* Paragraphs font*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/*For beer's tittle*/
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

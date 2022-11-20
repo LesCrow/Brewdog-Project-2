@@ -3,6 +3,11 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        anton: ["Anton", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        fun: ["sono", "sans-serif"],
+      },
       colors: {
         navBlue: {
           DEFAULT: "#15616D",
@@ -16,6 +21,7 @@ module.exports = {
       },
       backgroundImage: {
         basic: "url('src/assets/Brewery_phone.png')",
+        home: "url('src/assets/Home phone.png')",
       },
     },
   },
