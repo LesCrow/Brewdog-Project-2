@@ -14,8 +14,12 @@ function CartItem({ item }) {
           className="w-8 h-28 mx-4 my-4 "
         />
       </th>
+      <th>x{item.quantity}</th>
       <th className="font-fun">{item.name}</th>
-      <th> {moneyConverterJmdToEur(item.target_fg).toFixed(2)}€</th>
+      <th>
+        {" "}
+        {moneyConverterJmdToEur(item.target_fg).toFixed(2) * item.quantity}€
+      </th>
       <th>
         <button
           onClick={() => removeItem(item.id)}

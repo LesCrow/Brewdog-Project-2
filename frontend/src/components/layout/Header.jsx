@@ -1,16 +1,15 @@
-import React, { useContext, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-
 import Logo from "../global/Logo";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";
 import PictoBeerAnimation from "../header/PictoBeerAnimation";
 import CartContext from "../../context/Cart/CartContext";
 import ShoppingCart from "../shop/ShoppingCart";
+import CartItemQuantity from "../shop/CartItemQuantity";
 
 function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   const { cartItems, showHideCart } = useContext(CartContext);
@@ -19,6 +18,14 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
   function handleDisplaySearchBar() {
     setIsSearchBarActive(!isSearchBarActive);
   }
+
+  const [isNew, setIsNew] = useState(false);
+
+  useEffect(() => {
+    setIsNew(true);
+    const timer = setTimeout(() => setIsNew(false), 300);
+    return () => clearTimeout(timer);
+  }, [cartItems]);
 
   return (
     <div>
@@ -54,15 +61,8 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
                 onClick={showHideCart}
                 className="h-9 w-9  md:h-14 md:w-14"
               />
-              {cartItems.length > 0 && (
-                <motion.div
-                  initial={{ y: -400 }}
-                  animate={{ y: 0 }}
-                  transition={{ delay: 0.2, type: "spring", bounce: 0.8 }}
-                  className="  ml-1 bg-backcolor rounded-full h-6 w-6 flex justify-center font-fun"
-                >
-                  <motion.span>{cartItems.length}</motion.span>
-                </motion.div>
+              {cartItems.length > 0 && !isNew && (
+                <CartItemQuantity cartItems={cartItems} />
               )}
             </div>
           )}

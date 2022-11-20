@@ -7,6 +7,7 @@ import { moneyConverterJmdToEur } from "../../utils/constants";
 function ShoppingCart() {
   const { showCart, cartItems, showHideCart } = useContext(CartContext);
   const categories = ["produits", "descriptif", "prix", "delete"];
+
   return (
     <div>
       {showCart && (
@@ -54,10 +55,12 @@ function ShoppingCart() {
                       {cartItems
                         .reduce(
                           (amount, item) =>
-                            moneyConverterJmdToEur(item.target_fg) + amount,
+                            moneyConverterJmdToEur(
+                              item.target_fg * item.quantity
+                            ) + amount,
                           0
                         )
-                        .toFixed(2)}
+                        .toFixed(2)}{" "}
                       €
                     </div>
                     <motion.div
