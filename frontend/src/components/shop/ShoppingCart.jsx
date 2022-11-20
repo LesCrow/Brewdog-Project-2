@@ -12,7 +12,10 @@ function ShoppingCart() {
     <div>
       {showCart && (
         <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-50">
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
             className="flex w-5/6 md:w-3/6 overflow-y-auto h-5/6 flex-col bg-white 
             rounded-lg"
           >
@@ -73,7 +76,7 @@ function ShoppingCart() {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

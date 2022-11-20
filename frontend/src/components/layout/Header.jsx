@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { RiShoppingCartLine } from "react-icons/ri";
@@ -56,15 +57,24 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
 
           {/* Shopping cart icon */}
           {!isSearchBarActive && (
-            <div className=" flex flex-row justify-center items-center">
+            <motion.div
+              className=" flex flex-row justify-center items-center"
+              whileHover={{
+                rotate: [0, 60, -60, 0],
+              }}
+              transition={{
+                type: "spring",
+                bounce: 0.8,
+              }}
+            >
               <RiShoppingCartLine
                 onClick={showHideCart}
-                className="h-9 w-9  md:h-14 md:w-14"
+                className="h-9 w-9  md:h-14 md:w-14 cursor-pointer"
               />
-              {cartItems.length > 0 && !isNew && (
-                <CartItemQuantity cartItems={cartItems} />
-              )}
-            </div>
+            </motion.div>
+          )}
+          {cartItems.length > 0 && !isNew && (
+            <CartItemQuantity cartItems={cartItems} />
           )}
         </div>
       </div>

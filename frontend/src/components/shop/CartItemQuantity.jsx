@@ -9,10 +9,10 @@ function CartItemQuantity({ cartItems }) {
   );
   return (
     <motion.div
-      initial={{ y: -400 }}
+      initial={{ y: -200 }}
       animate={{ y: 0 }}
-      transition={{ delay: 0.2, type: "spring", bounce: 0.8 }}
-      className=" absolute ml-20 bg-backcolor rounded-full h-6 w-6 flex justify-center font-fun"
+      transition={{ delay: 0.01, type: "spring", bounce: 0.8 }}
+      className=" absolute ml-40 bg-backcolor rounded-full h-6 w-6 flex justify-center font-fun"
     >
       <motion.span>{cartItems.length}</motion.span>
     </motion.div>

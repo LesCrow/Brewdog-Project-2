@@ -6,7 +6,7 @@ import Popup from "./Popup";
 import CartContext from "../../context/Cart/CartContext";
 import { moneyConverterJmdToEur } from "../../utils/constants";
 
-function BeersCards({ beer }) {
+function BeersCards({ beer, i }) {
   const { addToCart } = useContext(CartContext);
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
@@ -21,7 +21,12 @@ function BeersCards({ beer }) {
   }
 
   return (
-    <div className="flex flex-row border border-black rounded-md p-4">
+    <motion.div
+      initial={{ opacity: 0, translateY: -500 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 1, delay: i * 0.08 }}
+      className="flex flex-row border border-black rounded-md p-4"
+    >
       <li
         className="relative flex flex-col justify-end items-center"
         onMouseEnter={HandleOverOpacity}
@@ -81,7 +86,7 @@ function BeersCards({ beer }) {
           />
         </div>
       </li>
-    </div>
+    </motion.div>
   );
 }
 
