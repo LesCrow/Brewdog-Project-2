@@ -15,7 +15,10 @@ function Home() {
           <Title title="BREWDOG" />
           <div className=" flex-col  sm:flex-row  w-[100%]  flex ">
             <div className="  w-full flex justify-center items-center">
-              <img
+              <motion.img
+                initial={{ x: -1000 }}
+                animate={{ x: 0 }}
+                transition={{ delay: 0.2 }}
                 className=" flex p-3 object-cover bg-center h-80 md:h-[60%]"
                 src="src/assets/ecureuil-home-page.png"
                 alt="ecureuil"
@@ -41,7 +44,9 @@ function Home() {
           </h2>
           <div className="flex w-full items-center justify-center pt-72 z-0">
             <motion.div
-              transition={{ delay: 0.2, type: "just" }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.3, type: "just" }}
               className="transform -translate-y-44
               translate-x-6 md:-translate-y-48 md:translate-x-16"
             >
@@ -52,7 +57,9 @@ function Home() {
               />
             </motion.div>
             <motion.div
-              transition={{ delay: 0.2, type: "just" }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5, type: "just" }}
               className="z-10 transform -translate-y-28
               translate-x-0 md:-translate-y-0 md:translate-x-0"
             >
@@ -63,7 +70,9 @@ function Home() {
               />
             </motion.div>
             <motion.div
-              transition={{ delay: 0.2, type: "just" }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.8, type: "just" }}
               className="transform -translate-y-56
               translate-x-[-20px]  md:-translate-y-56 md:-translate-x-16 z-20"
             >
@@ -80,17 +89,26 @@ function Home() {
             </h3>
           </div>
           <div className="flex  justify-center items-center  ">
-            <img
+            <motion.img
+              initial={{ x: -1000 }}
+              animate={{ x: 0 }}
+              transition={{ delay: 0.2 }}
               className=" w-24 lg:w-80 m-8 lg:m-16 "
               src="src/assets/téléchargement 1.png"
               alt="events"
             />
-            <img
+            <motion.img
+              initial={{ y: 1000 }}
+              animate={{ y: 0 }}
+              transition={{ delay: 0.5 }}
               className="w-24 lg:w-80 mb-6 lg:mb-14"
               src="src/assets/biere-festiva-france_montelimar 1.png"
               alt="events"
             />
-            <img
+            <motion.img
+              initial={{ x: 1000 }}
+              animate={{ x: 0 }}
+              transition={{ delay: 0.8 }}
               className="w-24 lg:w-80 m-8 lg:m-16"
               src="src/assets/festival-biere-france_lille1 1.png"
               alt="events"
