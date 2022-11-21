@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
+import BeerDetails from "../shop/BeerDetails";
 
 function SearchBar() {
   const [filtered, setFiltered] = useState("");
+  const [dataBeer, setDataBeer] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://api.punkapi.com/v2/beers")
+      .then((response) => setDataBeer(response.data));
+  }, []);
 
   return (
     <div>
@@ -15,8 +23,14 @@ function SearchBar() {
             setFiltered(e.target.value);
           }}
         />
-        {console.error(filtered)}
       </Link>
+
+      {dataBeer.map(
+        (beer) =>
+          beer.name.toLowerCase() === filtered.toLowerCase() && (
+            <BeerDetails beer={beer} />
+          )
+      )}
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-
 import Logo from "../global/Logo";
 import SearchBar from "../header/SearchBar";
 import PictoBeer from "../header/PictoBeer";

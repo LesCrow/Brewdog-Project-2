@@ -9,7 +9,7 @@ function Brewery() {
           <Title title="BREWERY" className="my-6" />
 
           <img
-            className=" p-3 object-cover bg-center w-full h-40"
+            className=" p-3 object-cover bg-center w-full h-[450px]"
             src="src/assets/history-2012.jpeg"
             alt="brewery"
           />
@@ -33,7 +33,7 @@ function Brewery() {
           </div>
         </div>
         <img
-          className=" p-3 object-cover bg-center w-full h-40"
+          className=" p-3 object-cover bg-center w-full h-[450px]"
           src="src/assets/155_-_bronze_beers_-_may_2021_19052021_-_brewdog_-_grant_anderson_-_fullsize.jpeg"
           alt="technique"
         />
@@ -50,7 +50,7 @@ function Brewery() {
           </div>
         </div>
         <img
-          className="p-3 object-cover bg-center w-full h-40"
+          className="p-3 object-cover bg-center w-full h-[450px]"
           src="src/assets/Beer_Quality_4.webp"
           alt="beer"
         />
