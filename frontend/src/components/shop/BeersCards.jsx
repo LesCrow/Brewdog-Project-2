@@ -75,7 +75,9 @@ function BeersCards({ beer, i }) {
             whileHover={{ scale: 1.2 }}
             type="button"
             className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6 text-white font-semibold"
-            onClick={() => setOpenDescription(true)}
+            onClick={() => {
+              setOpenDescription(!openDescription), setIsOpacity(!isOpacity);
+            }}
           >
             Description
           </motion.button>
@@ -92,6 +94,7 @@ function BeersCards({ beer, i }) {
 
 BeersCards.propTypes = {
   beer: PropTypes.objectOf().isRequired,
+  i: PropTypes.string.isRequired,
 };
 
 export default BeersCards;

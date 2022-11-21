@@ -41,7 +41,7 @@ function ShoppingCart() {
               ) : (
                 <div className="p-6 ">
                   <table className="w-full overflow-y-auto mt-4 ">
-                    <tr className="">
+                    <tr className="hidden">
                       {categories.map((cat) => (
                         <th className="md:pt-4">{cat}</th>
                       ))}
