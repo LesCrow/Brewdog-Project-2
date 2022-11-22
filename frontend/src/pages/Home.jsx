@@ -27,7 +27,7 @@ function Home() {
               <motion.img
                 initial={{ x: inView2 ? 0 : 3000 }}
                 animate={{ x: inView2 ? 0 : -1000 }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: 0.1, duration: 0.7 }}
                 className=" flex p-3 object-cover bg-center h-80 md:h-[60%]"
                 src="src/assets/ecureuil-home-page.png"
                 alt="ecureuil"
@@ -104,7 +104,7 @@ function Home() {
             <motion.img
               initial={{ x: inView ? 0 : 3000 }}
               animate={{ x: inView ? 0 : -1000 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.2, duration: 1 }}
               className=" w-24 lg:w-80 m-8 lg:m-16 "
               src="src/assets/téléchargement 1.png"
               alt="events"
@@ -112,7 +112,7 @@ function Home() {
             <motion.img
               initial={{ y: inView ? 0 : 3000 }}
               animate={{ y: inView ? 0 : 1000 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
               className="w-24 lg:w-80 mb-6 lg:mb-14"
               src="src/assets/biere-festiva-france_montelimar 1.png"
               alt="events"
@@ -120,7 +120,7 @@ function Home() {
             <motion.img
               initial={{ x: inView ? 0 : -3000 }}
               animate={{ x: inView ? 0 : 1000 }}
-              transition={{ delay: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
               className="w-24 lg:w-80 m-8 lg:m-16"
               src="src/assets/festival-biere-france_lille1 1.png"
               alt="events"
