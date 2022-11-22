@@ -19,6 +19,10 @@ function BeersCards({ beer, i }) {
   function HandleOverOpacity() {
     setIsOpacity((j) => !j);
   }
+  function HandleOpacityAndDescription() {
+    setOpenDescription(!openDescription);
+    setIsOpacity(!isOpacity);
+  }
 
   return (
     <motion.div
@@ -75,9 +79,7 @@ function BeersCards({ beer, i }) {
             whileHover={{ scale: 1.2 }}
             type="button"
             className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6 text-white font-semibold"
-            onClick={() => {
-              setOpenDescription(!openDescription);
-            }}
+            onClick={HandleOpacityAndDescription}
           >
             Description
           </motion.button>
