@@ -5,7 +5,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import { moneyConverterJmdToEur } from "../../utils/constants";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import CartContext from "../../context/Cart/CartContext";
-import { moneyConverterJmdToEur } from "../../utils/constants";
 
 const dropIn = {
   hidden: { opacity: 0 },
