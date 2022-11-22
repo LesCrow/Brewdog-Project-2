@@ -34,11 +34,11 @@ function Popup({ beer, open, onClose }) {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"
+          className="fixed  inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-50 "
         >
           <div
             className="w-3/4 h-5/6 flex flex-col bg-white bg-opacity-90 overflow-y-auto p-2
-            rounded-lg"
+            rounded-lg md:w-1/2 md:items-center"
             ref={ref}
           >
             <button
@@ -54,12 +54,12 @@ function Popup({ beer, open, onClose }) {
                 src={beer.image_url}
                 alt="Une biere"
               />
-              <h2 className="font-fun mb-1 ">{beer.name}</h2>
-              <h1 className="bg-bargreen rounded-md w-full p-2 bg-opacity-90 mb-1">
+              <h2 className="font-fun mb-1 md:text-xl">{beer.name}</h2>
+              <h1 className="bg-bargreen rounded-md w-full p-2 bg-opacity-90 mb-1 md:w-3/4 md:text-lg">
                 {beer.description}
               </h1>
 
-              <div className="bg-backpink rounded-md w-full bg-opacity-90 p-2">
+              <div className="bg-backpink rounded-md w-full bg-opacity-90 p-2 md:w-3/4 md:text-lg">
                 <h3 className="font-bold">Good combinaison with : </h3>
                 <li>
                   {beer.food_pairing.map((food) => (
@@ -68,16 +68,19 @@ function Popup({ beer, open, onClose }) {
                 </li>
               </div>
             </div>
-            <div className="flex flex-row justify-around w-full">
-              <p className="text-bargreen font-semibold  "> {beer.abv} %</p>
-              <p className="text-backpink font-semibold ">
+            <div className="flex flex-row justify-around w-full md:w-3/4 ">
+              <p className="text-bargreen font-semibold md:text-lg ">
+                {" "}
+                {beer.abv} %
+              </p>
+              <p className="text-backpink font-semibold md:text-lg ">
                 {moneyConverterJmdToEur(beer.target_fg).toFixed(2)} €
               </p>
               <motion.button
                 whileHover={{ scale: 1.2 }}
                 type="button"
                 onClick={() => addToCart(beer)}
-                className="text-sm bg-bargreen rounded-md flex justify-center items-center   text-white h-full w-1/4"
+                className="text-sm bg-bargreen rounded-md flex justify-center items-center md:text-lg   text-white h-full w-1/4"
               >
                 Add to <FaShoppingCart />
               </motion.button>
