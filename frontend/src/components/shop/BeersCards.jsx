@@ -25,7 +25,7 @@ function BeersCards({ beer, i }) {
       initial={{ opacity: 0, translateY: -500 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 1, delay: i * 0.08 }}
-      className="flex flex-row border border-black rounded-md p-4"
+      className="flex flex-row border border-black rounded-md p-4 "
     >
       <li
         className="relative flex flex-col justify-end items-center"
