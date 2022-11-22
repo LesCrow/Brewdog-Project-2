@@ -105,8 +105,8 @@ function Home() {
               alt="events"
             />
             <motion.img
-              initial={{ y: inView ? 0 : 2000 }}
-              animate={{ y: inView ? 0 : -10000 }}
+              initial={{ y: inView ? 0 : 3000 }}
+              animate={{ y: inView ? 0 : 1000 }}
               transition={{ delay: 0.5 }}
               className="w-24 lg:w-80 mb-6 lg:mb-14"
               src="src/assets/biere-festiva-france_montelimar 1.png"
