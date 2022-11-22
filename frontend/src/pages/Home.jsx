@@ -16,7 +16,7 @@ function Home() {
       exit={{ scaleY: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="w-full bg-home bg-cover relative ">
+      <div className="w-full bg-home bg-cover relative md:-z-10">
         <div>
           <MyCarousel />
         </div>
