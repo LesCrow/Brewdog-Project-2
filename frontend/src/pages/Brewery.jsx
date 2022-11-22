@@ -1,6 +1,6 @@
 import React from "react";
-import Title from "../components/global/Title";
 import { motion } from "framer-motion";
+import Title from "../components/global/Title";
 
 function Brewery() {
   return (

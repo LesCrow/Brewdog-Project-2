@@ -15,6 +15,7 @@ module.exports = {
         },
         backcolor: "#FFECD1",
         bargreen: "#15616D",
+        colorAge: "#219aad",
         cream: "#E2DBC5",
         backpink: "#D88C9A",
         backgreen: "#99C1B9",
