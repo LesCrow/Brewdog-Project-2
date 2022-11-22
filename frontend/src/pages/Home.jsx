@@ -22,7 +22,7 @@ function Home() {
               <motion.img
                 initial={{ x: inView2 ? 0 : 3000 }}
                 animate={{ x: inView2 ? 0 : -1000 }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.1 }}
                 className=" flex p-3 object-cover bg-center h-80 md:h-[60%]"
                 src="src/assets/ecureuil-home-page.png"
                 alt="ecureuil"
@@ -105,8 +105,8 @@ function Home() {
               alt="events"
             />
             <motion.img
-              initial={{ y: inView ? 0 : -3000 }}
-              animate={{ y: inView ? 0 : 1000 }}
+              initial={{ y: inView ? 0 : 2000 }}
+              animate={{ y: inView ? 0 : -10000 }}
               transition={{ delay: 0.5 }}
               className="w-24 lg:w-80 mb-6 lg:mb-14"
               src="src/assets/biere-festiva-france_montelimar 1.png"
