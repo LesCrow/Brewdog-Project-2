@@ -10,7 +10,12 @@ function Home() {
   const inView2 = useInView(imageRef2);
 
   return (
-    <div>
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className="w-full bg-home bg-cover relative ">
         <div>
           <MyCarousel />
@@ -123,7 +128,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

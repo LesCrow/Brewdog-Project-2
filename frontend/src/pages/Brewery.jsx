@@ -1,9 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Title from "../components/global/Title";
 
 function Brewery() {
   return (
-    <div className="w-full bg-basic bg-cover relative ">
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 1 }}
+      className="w-full bg-basic bg-cover relative "
+    >
       <div className="z-10 relative w-full">
         <div>
           <Title title="BREWERY" className="my-6" />
@@ -70,7 +77,7 @@ function Brewery() {
           </h2>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
