@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { typeBoxes } from "../utils/constants";
 import BeersCards from "../components/shop/BeersCards";
+import { motion } from "framer-motion";
 
 function Shop() {
   const [selectedCheckRadio, setSelectedCheckRadio] = useState();
