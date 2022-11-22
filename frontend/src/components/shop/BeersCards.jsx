@@ -22,8 +22,8 @@ function BeersCards({ beer, i }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, translateY: -500 }}
-      animate={{ opacity: 1, translateY: 0 }}
+      initial={{ opacity: 0, translateX: -500 }}
+      animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 1, delay: i * 0.08 }}
       className="flex flex-row border border-black rounded-md p-4 "
     >
