@@ -76,7 +76,7 @@ function BeersCards({ beer, i }) {
             type="button"
             className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6 text-white font-semibold"
             onClick={() => {
-              setOpenDescription(!openDescription), setIsOpacity(!isOpacity);
+              setOpenDescription(!openDescription);
             }}
           >
             Description

@@ -55,7 +55,7 @@ function Age({ setIsVerified }) {
         <motion.h1
           initial={{ y: -400 }}
           animate={{ y: 0 }}
-          className="text-bargreen text-center text-4xl text-stroke text-white pt-10"
+          className="text-colorAge text-center text-4xl text-stroke  pt-10"
         >
           How old are you ?
         </motion.h1>
