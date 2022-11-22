@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function SearchBar() {
-  const [dataBeer, setDataBeer] = useState([]);
+  const [dataBeers, setDataBeers] = useState([]);
+
   const [selectedBeer, setSelectedBeer] = useState("");
 
   useEffect(() => {
     axios
       .get("https://api.punkapi.com/v2/beers")
-      .then((response) => setDataBeer(response.data));
+      .then((response) => setDataBeers(response.data));
   }, []);
 
   return (
@@ -25,14 +26,14 @@ function SearchBar() {
             setSelectedBeer(e.target.value);
           }}
         />
-        <div className="flex bg-slate-700  rounded-md z-40 flex-col absolute">
-          {dataBeer.length > 0 &&
-            dataBeer
+        <div className="flex bg-backpink border-4 border-black rounded-md z-40 flex-col absolute ">
+          {dataBeers.length > 0 &&
+            dataBeers
               .filter((item) => item.name.toLowerCase().includes(selectedBeer))
               .map((beer) => (
                 <Link to={`/beers/${beer.id}`}>
                   <span
-                    className="text-white w-full text-left text-ellipsis hover:bg-slate-400 px-2 cursor-pointer"
+                    className="text-black w-full text-left text-ellipsis hover:bg-slate-400 px-2 cursor-pointer"
                     value={beer.id}
                   >
                     {beer.name}

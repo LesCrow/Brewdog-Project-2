@@ -6,15 +6,20 @@ import BeersCards from "../components/shop/BeersCards";
 function BeerDetails() {
   const [dataBeer, setDataBeer] = useState([]);
   const { id } = useParams();
+  const getBeer = () => {
+    axios.get(`https://api.punkapi.com/v2/beers/${id}`).then((response) => {
+      setDataBeer(response.data);
+    });
+  };
   useEffect(() => {
-    axios
-      .get(`https://api.punkapi.com/v2/beers/${id}`)
-      .then((response) => setDataBeer(response.data));
-  }, []);
+    getBeer();
+  }, [id]);
+
+  if (dataBeer.length === 0) return <div>Loading ...</div>;
 
   return (
-    <div>
-      <BeersCards beer={dataBeer} />
+    <div className="flex justify-center my-5">
+      <BeersCards beer={dataBeer[0]} />
     </div>
   );
 }
