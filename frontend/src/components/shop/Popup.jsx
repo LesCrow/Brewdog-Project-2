@@ -1,8 +1,8 @@
 import React, { useRef, useContext } from "react";
+import PropTypes from "prop-types";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaShoppingCart } from "react-icons/fa";
-
-import PropTypes from "prop-types";
+import { moneyConverterJmdToEur } from "../../utils/constants";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import CartContext from "../../context/Cart/CartContext";
 import { moneyConverterJmdToEur } from "../../utils/constants";
