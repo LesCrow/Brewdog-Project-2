@@ -45,11 +45,22 @@ function BeerDetails() {
             <p>
               {" "}
               <br />
-              ABV (Alcohol By Volume) : {dataBeer[0].abv} %
+              ABV <span className="italic">(Alcohol By Volume)</span> :{" "}
+              {dataBeer[0].abv} %
             </p>
-            <p>IBU (International Bitterness Unit) : {dataBeer[0].ibu}</p>
-            <p>EBC (European Brewery Convention) : {dataBeer[0].ebc}</p>
-            <p>SRM (Standard Reference Method) : {dataBeer[0].srm}</p>
+            <p>
+              IBU{" "}
+              <span className="italic">(International Bitterness Unit)</span> :{" "}
+              {dataBeer[0].ibu}
+            </p>
+            <p>
+              EBC <span className="italic">(European Brewery Convention)</span>{" "}
+              : {dataBeer[0].ebc}
+            </p>
+            <p>
+              SRM <span className="italic">(Standard Reference Method)</span> :{" "}
+              {dataBeer[0].srm}
+            </p>
             <p>pH : {dataBeer[0].ph}</p>
             <p className="font-bold text-lg">
               {" "}
@@ -66,20 +77,30 @@ function BeerDetails() {
                 <li>{item.name}</li>
               ))}
             </ul>
-            <p className="font-bold">
+            <p className="font-bold mb-5">
               {" "}
               <br />
               Hops :{" "}
             </p>
             <div className="flex flex-row ">
               <ul className="mr-10">
+                <li className="mb-3">NAME</li>
                 {dataBeer[0].ingredients.hops.map((item) => (
                   <li>{item.name}</li>
                 ))}
               </ul>
-              <ul>
+              <ul className="mr-10">
+                <li className="mb-3">ATTRIBUTE</li>
                 {dataBeer[0].ingredients.hops.map((item) => (
-                  <p>({item.add})</p>
+                  <li>{item.attribute}</li>
+                ))}
+              </ul>
+
+              <ul>
+                <li className="mb-3">ADD</li>
+
+                {dataBeer[0].ingredients.hops.map((item) => (
+                  <p>{item.add}</p>
                 ))}
               </ul>
             </div>
