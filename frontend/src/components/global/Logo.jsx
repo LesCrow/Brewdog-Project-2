@@ -2,11 +2,11 @@ import React from "react";
 
 function Logo() {
   return (
-    <div className="m-2 ">
+    <div className="mt-2 ">
       <img
         src="src/assets/logo_brewdog.png"
         alt="logo"
-        className="h-28 ml-5 md:h-40"
+        className="h-[116px] ml-5 md:h-52 md:pt-6 "
       />
     </div>
   );
