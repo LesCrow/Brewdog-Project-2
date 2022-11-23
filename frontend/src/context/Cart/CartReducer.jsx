@@ -9,9 +9,25 @@ function CartReducer(state, action) {
       };
     }
     case ADD_TO_CART: {
+      const item = state.cartItems.find(
+        (product) => product.id === action.payload.id
+      );
+      if (item) {
+        return {
+          ...state,
+          cartItems: state.cartItems.map((product) =>
+            product.id === action.payload.id
+              ? {
+                  ...product,
+                  quantity: product.quantity + 1,
+                }
+              : product
+          ),
+        };
+      }
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload],
+        cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
       };
     }
 

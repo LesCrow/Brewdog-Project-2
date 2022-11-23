@@ -11,6 +11,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #d88c9a;
+}
+
 .text-stroke {
   -webkit-text-stroke: 1px black;
   font-family: "Anton";

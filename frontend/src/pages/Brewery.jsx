@@ -1,15 +1,22 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Title from "../components/global/Title";
 
 function Brewery() {
   return (
-    <div className="w-full bg-basic bg-cover relative ">
-      <div className="z-10 relative w-full">
+    <motion.div
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 1 }}
+      className="w-full bg-basic bg-cover relative md:-z-10"
+    >
+      <div className="z-10 relative w-full md:pt-10 ">
         <div>
           <Title title="BREWERY" className="my-6" />
 
           <img
-            className=" p-3 object-cover bg-center w-full h-40"
+            className=" p-3 object-cover bg-center w-full h-40 md:h-80 md:pt-10 "
             src="src/assets/history-2012.jpeg"
             alt="brewery"
           />
@@ -33,7 +40,7 @@ function Brewery() {
           </div>
         </div>
         <img
-          className=" p-3 object-cover bg-center w-full h-40"
+          className=" p-3 object-cover bg-center w-full h-40 md:h-80"
           src="src/assets/155_-_bronze_beers_-_may_2021_19052021_-_brewdog_-_grant_anderson_-_fullsize.jpeg"
           alt="technique"
         />
@@ -50,7 +57,7 @@ function Brewery() {
           </div>
         </div>
         <img
-          className="p-3 object-cover bg-center w-full h-40"
+          className="p-3 object-cover bg-center w-full h-40 md:h-96"
           src="src/assets/Beer_Quality_4.webp"
           alt="beer"
         />
@@ -70,7 +77,7 @@ function Brewery() {
           </h2>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
