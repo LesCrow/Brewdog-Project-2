@@ -118,9 +118,9 @@ function Home() {
               alt="events"
             />
             <motion.img
-              initial={{ x: inView ? 0 : -3000 }}
-              animate={{ x: inView ? 0 : 1000 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
               className="w-24 lg:w-80 m-8 lg:m-16"
               src="src/assets/festival-biere-france_lille1 1.png"
               alt="events"
