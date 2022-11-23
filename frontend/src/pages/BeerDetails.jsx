@@ -22,7 +22,7 @@ function BeerDetails() {
   if (dataBeer.length === 0) return <div>Loading ...</div>;
 
   return (
-    <div className="bg-backcolor w-full h-full border">
+    <div className="bg-backcolor w-full h-full border md:pt-10">
       <div className=" borderflex flex-col justify-center my-5 h-full text-center w-[60%] m-auto ">
         <div className="p-2 flex flex-col items-center ">
           <img
