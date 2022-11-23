@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -10,9 +10,11 @@ import PictoBeer from "../header/PictoBeer";
 import PictoBeerAnimation from "../header/PictoBeerAnimation";
 import CartContext from "../../context/Cart/CartContext";
 import ShoppingCart from "../shop/ShoppingCart";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 import CartItemQuantity from "../shop/CartItemQuantity";
 
 function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
+  const ref = useRef();
   const { cartItems, showHideCart } = useContext(CartContext);
   // Display search bar
   const [isSearchBarActive, setIsSearchBarActive] = useState(false);
@@ -20,6 +22,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
     setIsSearchBarActive(!isSearchBarActive);
   }
 
+  useOnClickOutside(ref, () => setIsSearchBarActive(false));
   const [isNew, setIsNew] = useState(false);
 
   useEffect(() => {
@@ -45,7 +48,7 @@ function Header({ isBurgerMenuOpen, handleDisplayBurger }) {
         </Link>
 
         {/* Display search bar */}
-        <div className=" flex items-center">
+        <div ref={ref} className=" flex items-center">
           <HiMagnifyingGlass
             onClick={handleDisplaySearchBar}
             className="h-8 w-8 md:h-14 md:w-14 md:mr-10"
