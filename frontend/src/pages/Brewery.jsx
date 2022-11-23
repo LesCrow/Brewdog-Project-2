@@ -57,7 +57,7 @@ function Brewery() {
           </div>
         </div>
         <img
-          className="p-3 object-fill bg-center w-full h-40 md:h-80"
+          className="p-3 object-cover bg-center w-full h-40 md:h-96"
           src="src/assets/Beer_Quality_4.webp"
           alt="beer"
         />
