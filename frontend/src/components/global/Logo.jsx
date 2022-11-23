@@ -4,9 +4,9 @@ function Logo() {
   return (
     <div className="mt-2 ">
       <img
-        src="src/assets/logo_brewdog.png"
+        src="/logo_brewdog.png"
         alt="logo"
-        className="h-[116px] ml-5 md:h-52 md:pt-6 "
+        className="h-[116px] md:ml-16 md:h-52 md:pt-6 "
       />
     </div>
   );

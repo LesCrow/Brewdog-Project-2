@@ -6,7 +6,7 @@ function PictoBeer({ onClick, display }) {
     <div className="h-14 w-14 md:h-20 md:w-20 ml-10">
       <img
         onClick={onClick}
-        src="src/assets/chopeBiereAnimation1.png"
+        src="/chopeBiereAnimation1.png"
         alt="icone menu burger"
         className={display}
       />
