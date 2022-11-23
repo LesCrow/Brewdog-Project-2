@@ -39,8 +39,8 @@ function ShoppingCart() {
                   </h3>
                 </div>
               ) : (
-                <div className="p-6 ">
-                  <table className="w-full overflow-y-auto mt-4 ">
+                <div className="p-6 md:pt-20">
+                  <table className="w-full overflow-y-auto mt-4  ">
                     <tr className="hidden">
                       {categories.map((cat) => (
                         <th className="md:pt-4">{cat}</th>
