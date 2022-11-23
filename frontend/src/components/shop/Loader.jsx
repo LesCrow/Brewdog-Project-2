@@ -1,5 +1,5 @@
 import React from "react";
-import loader from "../../assets/animation.gif";
+import loader from "../../../public/animation.gif";
 
 function Loader() {
   return (
