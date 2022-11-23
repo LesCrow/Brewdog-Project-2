@@ -18,15 +18,20 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-backcolor w-full ">
-      <div className="absolute  bg-backcolor left-0 w-full h-full">
+    <motion.div
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      exit={{ scaleX: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="absolute  bg-backcolor left-0 w-full h-full -z-10">
         <div className="bg-backpink transform translate-y-0 sm:translate-y-56 md:translate-y-1 lg:translate-y-0 w-full h-full" />
       </div>
-      <div className="z-10 pt-20 relative w-full ">
+      <div className="z-10 pt-20 md:pt-32  relative w-full ">
         <div className=" mt-[-50px]">
           <Title title="CONTACT" />
           <img
-            className="mt-5 w-[90%] m-auto"
+            className="mt-5 w-[90%] m-auto md:pt-10"
             src="src/assets/dogtop.jpeg"
             alt="banimage"
           />
@@ -38,7 +43,7 @@ function Contact() {
             action={FORM_ENDPOINT}
             onSubmit={handleSubmit}
           >
-            <h2 className="font-anton text-center text-4xl md:text-8xl text-white mt-[-30px]  ">
+            <h2 className="font-anton text-center text-4xl md:text-4xl text-white mt-[-30px]  ">
               LEAVE US A MESSAGE
             </h2>
 
@@ -120,7 +125,7 @@ function Contact() {
                 src="src/assets/concert.jpeg"
                 alt="concertimage"
               />
-              <div className="w-full h-full absolute bg-backpink bg-opacity-30 bottom-10 left-10" />
+              <div className="w-full h-full absolute bg-white bg-opacity-20 bottom-10 left-10" />
             </motion.div>
           </div>
         </div>
@@ -130,7 +135,7 @@ function Contact() {
           </h2>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

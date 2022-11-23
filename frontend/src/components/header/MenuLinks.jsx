@@ -6,7 +6,7 @@ import { navLinks } from "../../utils/constants";
 
 function MenuLinks({ isBurgerMenuOpen }) {
   return (
-    <div className="md:ml-28 w-full h-screen  flex flex-col justify-around items-center text-white text-3xl">
+    <div className="md:ml-28 w-full h-[92vh]  flex flex-col justify-around items-center text-white text-3xl">
       {navLinks.map((link, index) => (
         <motion.li
           style={{ fontSize: `${70 + index * 20}px` }}

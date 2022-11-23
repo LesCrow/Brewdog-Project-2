@@ -2,14 +2,19 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { typeBoxes } from "../utils/constants";
 import BeersCards from "../components/shop/BeersCards";
+import Loader from "../components/shop/Loader";
 
 function Shop() {
   const [selectedCheckRadio, setSelectedCheckRadio] = useState();
   const [dataBeer, setDataBeer] = useState([]);
   const [foodPairing, setFoodPairing] = useState("");
   const [isActive, setIsActive] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 1800);
     axios
       .get("https://api.punkapi.com/v2/beers")
       .then((response) => setDataBeer(response.data));
@@ -36,8 +41,8 @@ function Shop() {
   };
 
   return (
-    <div className="bg-backcolor">
-      <div className=" w-full bg-backpink flex justify-around items-center h-10 mb-4 ">
+    <div className="bg-backcolor pb-2">
+      <div className=" w-full bg-backpink flex justify-around items-center h-10  ">
         <select
           onChange={(e) => setSelectedCheckRadio(e.target.value)}
           className=" w-40 rounded h-6 md:w-60"
@@ -59,19 +64,30 @@ function Shop() {
           onClick={() => setIsActive(!isActive)}
         />
       </div>
-      <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 ">
-        {dataBeer.length &&
-          handleSorting(dataBeer)
-            .filter(
-              (beer) =>
-                beer.food_pairing.filter((item) =>
-                  checkIfFoodPairingMatch(item, foodPairing)
-                ).length > 0
-            )
-            .map((beer) => (
-              <BeersCards key={beer.id} beer={beer} isActive={isActive} />
-            ))}
-      </ul>
+      {loader ? (
+        <div className="flex justify-center items-center">
+          <Loader />
+        </div>
+      ) : (
+        <ul className="flex flex-row flex-wrap justify-center	 gap-y-9  gap-x-6 my-4">
+          {dataBeer.length &&
+            handleSorting(dataBeer)
+              .filter(
+                (beer) =>
+                  beer.food_pairing.filter((item) =>
+                    checkIfFoodPairingMatch(item, foodPairing)
+                  ).length > 0
+              )
+              .map((beer, i) => (
+                <BeersCards
+                  key={beer.id}
+                  beer={beer}
+                  isActive={isActive}
+                  i={i}
+                />
+              ))}
+        </ul>
+      )}
     </div>
   );
 }

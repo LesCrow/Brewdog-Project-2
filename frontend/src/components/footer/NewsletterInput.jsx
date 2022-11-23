@@ -1,6 +1,8 @@
 /* eslint-disable no-restricted-syntax */
 import React from "react";
 import { toast } from "react-toastify";
+import giphy from "../../assets/giphy.gif";
+import wall from "../../assets/wall.gif";
 
 function NewsletterInput() {
   const [email, setEmail] = React.useState("");
@@ -15,10 +17,19 @@ function NewsletterInput() {
       )
     ) {
       notify(
-        "Thank your for your subscription ! You will now recieve our news in your mailbox !"
+        <div>
+          <img className="w-50" src={giphy} alt="gif" />
+          "Thank your for your subscription ! You will now recieve our news in
+          your mailbox !"
+        </div>
       );
     } else {
-      notify("Please enter a valid email");
+      notify(
+        <div>
+          <img className="w-50" src={wall} alt="gif" />
+          "Please enter a valid email"
+        </div>
+      );
     }
   };
 

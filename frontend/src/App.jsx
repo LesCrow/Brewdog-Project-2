@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
@@ -11,10 +12,12 @@ import CartContextProvider from "./context/Cart/CartState";
 import BeerDetails from "./pages/BeerDetails";
 
 function App() {
+  const location = useLocation();
+
   return (
     <CartContextProvider>
-      <BrowserRouter>
-        <Routes>
+      <AnimatePresence exitBeforeEnter initial>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
@@ -25,7 +28,7 @@ function App() {
             <Route path="*" element={<Home />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </AnimatePresence>
     </CartContextProvider>
   );
 }

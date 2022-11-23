@@ -6,7 +6,7 @@ import Popup from "./Popup";
 import CartContext from "../../context/Cart/CartContext";
 import { moneyConverterJmdToEur } from "../../utils/constants";
 
-function BeersCards({ beer }) {
+function BeersCards({ beer, i }) {
   const { addToCart } = useContext(CartContext);
   const [isDemo, setIsDemo] = useState(false);
   const [isOpacity, setIsOpacity] = useState(false);
@@ -19,9 +19,18 @@ function BeersCards({ beer }) {
   function HandleOverOpacity() {
     setIsOpacity((j) => !j);
   }
+  function HandleOpacityAndDescription() {
+    setOpenDescription(!openDescription);
+    setIsOpacity(!isOpacity);
+  }
 
   return (
-    <div className="flex flex-row border border-black rounded-md p-4">
+    <motion.div
+      initial={{ opacity: 0, translateX: -500 }}
+      animate={{ opacity: 1, translateX: 0 }}
+      transition={{ duration: 1, delay: i * 0.08 }}
+      className="flex flex-row border border-black rounded-md p-4 "
+    >
       <li
         className="relative flex flex-col justify-end items-center"
         onMouseEnter={HandleOverOpacity}
@@ -70,7 +79,7 @@ function BeersCards({ beer }) {
             whileHover={{ scale: 1.2 }}
             type="button"
             className="text-sm bg-backpink rounded-md flex justify-center items-center w-28  h-6 text-white font-semibold"
-            onClick={() => setOpenDescription(true)}
+            onClick={HandleOpacityAndDescription}
           >
             Description
           </motion.button>
@@ -81,12 +90,13 @@ function BeersCards({ beer }) {
           />
         </div>
       </li>
-    </div>
+    </motion.div>
   );
 }
 
 BeersCards.propTypes = {
   beer: PropTypes.objectOf().isRequired,
+  i: PropTypes.string.isRequired,
 };
 
 export default BeersCards;
