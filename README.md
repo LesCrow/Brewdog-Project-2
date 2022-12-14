@@ -1,35 +1,17 @@
-## Concept
+## BrewDog
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+School project in React and Tailwind CSS </br>
+BrewDog beer e-shop. </br></br>
+API : BrewDog </br>
+Team : Damsbot64, SebastienMOULIN, warasil,Antoine64160 and LesCrow
 
-## Setup & Use
+## Overview app
 
-### Project Initialization
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- Run command `npm run setup`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
-
-### Available Commands
-
-- `setup` : Initialization of frontend and backend, as well as all toolings
-- `migrate` : Run the database migration script
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
-- `fix` : Fixes linter errors (run it if `lint` growls on your code !)
-
-## FAQ
-
-### Tools
-
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-- _Nodemon_ : Allows to restart the server everytime a .js file is udated
+![Capture d’écran de 2022-12-14 14-55-24](https://user-images.githubusercontent.com/94840673/207614826-d6828fec-4223-4616-83d3-2663ab62ab03.png)
+![Capture d’écran de 2022-12-14 14-56-47](https://user-images.githubusercontent.com/94840673/207614838-b780ab91-8b80-4a0f-8bce-6e2d1fe9746d.png)
+![Capture d’écran de 2022-12-14 14-57-22](https://user-images.githubusercontent.com/94840673/207614851-60e7dac7-000f-4b7d-8cf1-8c9ff674aaf9.png)
+![Capture d’écran de 2022-12-14 14-58-08](https://user-images.githubusercontent.com/94840673/207614860-617ff44c-1c63-47dd-a726-06ce8ef41609.png)
+![Capture d’écran de 2022-12-14 14-58-26](https://user-images.githubusercontent.com/94840673/207614866-9ab714af-0226-4014-a128-343e4781b817.png)
+![Capture d’écran de 2022-12-14 14-58-45](https://user-images.githubusercontent.com/94840673/207614870-7b19dc0d-1f10-497e-926c-7d8843bda215.png)
+![Capture d’écran de 2022-12-14 14-58-59](https://user-images.githubusercontent.com/94840673/207614878-e222f041-63e8-4dc1-baab-acb3dd458a6d.png)
